@@ -98,8 +98,10 @@
             this.listViewFiles.Location = new System.Drawing.Point(15, 125);
             this.listViewFiles.Name = "listViewFiles";
             this.listViewFiles.Size = new System.Drawing.Size(924, 467);
+            this.listViewFiles.SmallImageList = this.imageList1;
             this.listViewFiles.TabIndex = 4;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
+            this.listViewFiles.View = System.Windows.Forms.View.SmallIcon;
             this.listViewFiles.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewFiles_ItemSelectionChanged);
             this.listViewFiles.DoubleClick += new System.EventHandler(this.listViewFiles_DoubleClick);
             // 
@@ -107,14 +109,14 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "doc.png");
-            this.imageList1.Images.SetKeyName(1, "exe.png");
-            this.imageList1.Images.SetKeyName(2, "folder.png");
-            this.imageList1.Images.SetKeyName(3, "json-file.png");
-            this.imageList1.Images.SetKeyName(4, "mp3.png");
-            this.imageList1.Images.SetKeyName(5, "mp4-file.png");
-            this.imageList1.Images.SetKeyName(6, "pdf.png");
-            this.imageList1.Images.SetKeyName(7, "png.png");
+            this.imageList1.Images.SetKeyName(0, "folder.png");
+            this.imageList1.Images.SetKeyName(1, "json-file.png");
+            this.imageList1.Images.SetKeyName(2, "pdf.png");
+            this.imageList1.Images.SetKeyName(3, "doc.png");
+            this.imageList1.Images.SetKeyName(4, "exe.png");
+            this.imageList1.Images.SetKeyName(5, "png.png");
+            this.imageList1.Images.SetKeyName(6, "mp3.png");
+            this.imageList1.Images.SetKeyName(7, "mp4-file.png");
             this.imageList1.Images.SetKeyName(8, "unknown.png");
             // 
             // GestorDeArchivos

@@ -15,14 +15,13 @@ namespace Project_MemoryKidz
     public partial class GestorDeArchivos : Form
     {
 
-        private string filePath = "C:";
+        private string filePath = "D:";
         private bool isFile = false;
         private string selectedItemName = "";
 
         public GestorDeArchivos()
         {
             InitializeComponent();
-            InitializeImageList();
         }
 
 
@@ -33,76 +32,74 @@ namespace Project_MemoryKidz
         }
 
         private void loadFilesAndDirectories()
-{
-    try
-    {
-        listViewFiles.Items.Clear();
-        DirectoryInfo fileList = new DirectoryInfo(filePath);
-
-        FileInfo[] files = fileList.GetFiles();
-        DirectoryInfo[] directories = fileList.GetDirectories();
-
-        // Agregar directorios
-        foreach (var directory in directories)
         {
-            ListViewItem item = new ListViewItem(directory.Name)
+            try
             {
-                ImageKey = "folder" // Icono para carpetas
-            };
-            listViewFiles.Items.Add(item);
+                listViewFiles.Items.Clear();
+                DirectoryInfo fileList = new DirectoryInfo(filePath);
+
+                FileInfo[] files = fileList.GetFiles();
+                DirectoryInfo[] directories = fileList.GetDirectories();
+
+              
+                foreach (var directory in directories)
+                {
+                    ListViewItem item = new ListViewItem(directory.Name);
+
+                    item.ImageIndex = 0;
+
+                    listViewFiles.Items.Add(item);
+                }
+
+                foreach (var file in files)
+                {
+                    ListViewItem item = new ListViewItem(file.Name);
+
+                    item.ImageIndex = getImageIndexByExtension(file.Extension);
+                    
+                    listViewFiles.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
         }
 
-        // Agregar archivos con icono según su tipo
-        foreach (var file in files)
+        private int getImageIndexByExtension(string extension)
         {
-            string extension = file.Extension.ToLower();
-            string imageKey;
+            int imageIndex = 8;
 
-            // Asigna un icono según la extensión del archivo
-            switch (extension)
+            switch (extension.ToLower())
             {
-                case ".doc":
-                case ".docx":
-                    imageKey = "doc";
+                case ".json":
+                    imageIndex = 1;
                     break;
                 case ".pdf":
-                    imageKey = "pdf";
+                    imageIndex = 2;
                     break;
-                case ".mp3":
-                    imageKey = "mp3";
-                    break;
-                case ".mp4":
-                    imageKey = "mp4";
+                case ".doc":
+                    imageIndex = 3;
                     break;
                 case ".exe":
-                    imageKey = "exe";
+                    imageIndex = 4;
                     break;
                 case ".png":
-                case ".jpg":
-                case ".jpeg":
-                    imageKey = "png";
+                    imageIndex = 5;
                     break;
-                case ".json":
-                    imageKey = "json";
+                case ".mp3":
+                    imageIndex = 6;
+                    break;
+                case ".mp4":
+                    imageIndex = 7;
                     break;
                 default:
-                    imageKey = "unknown"; // Para tipos desconocidos
+                    imageIndex = 8;
                     break;
             }
 
-            ListViewItem item = new ListViewItem(file.Name)
-            {
-                ImageKey = imageKey // Asigna el icono según el tipo de archivo
-            };
-            listViewFiles.Items.Add(item);
+            return imageIndex;
         }
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show("Error al cargar archivos y directorios: " + ex.Message);
-    }
-}
-
 
         public void loadButtonAction()
         {
@@ -164,28 +161,5 @@ namespace Project_MemoryKidz
                 }
             }
         }
-        
-        private void InitializeImageList()
-        {
-            string resourcePath = Path.Combine(Application.StartupPath, "resources");
-            try
-            {
-                imageList1.Images.Add("folder", Image.FromFile(Path.Combine(resourcePath, "folder.png")));
-                imageList1.Images.Add("doc", Image.FromFile(Path.Combine(resourcePath, "doc.png")));
-                imageList1.Images.Add("pdf", Image.FromFile(Path.Combine(resourcePath, "pdf.png")));
-                imageList1.Images.Add("mp3", Image.FromFile(Path.Combine(resourcePath, "mp3.png")));
-                imageList1.Images.Add("mp4", Image.FromFile(Path.Combine(resourcePath, "mp4-file.png")));
-                imageList1.Images.Add("exe", Image.FromFile(Path.Combine(resourcePath, "exe.png")));
-                imageList1.Images.Add("png", Image.FromFile(Path.Combine(resourcePath, "png.png")));              
-                imageList1.Images.Add("json", Image.FromFile(Path.Combine(resourcePath, "json-file.png")));
-                imageList1.Images.Add("unknown", Image.FromFile(Path.Combine(resourcePath, "unknown.png")));
-
-                listViewFiles.SmallImageList = imageList1; // Asigna el ImageList al ListView
-            }
-            catch (Exception ex) {
-                MessageBox.Show("Error al cargar imágenes: " + ex.Message);
-            }            
-        }     
-
     }
 }
