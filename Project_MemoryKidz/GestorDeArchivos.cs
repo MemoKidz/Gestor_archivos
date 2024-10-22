@@ -18,6 +18,7 @@ namespace Project_MemoryKidz
         private string filePath = "D:";
         private bool isFile = false;
         private string selectedItemName = "";
+        private Stack<string> directoryHistory = new Stack<string>();
 
         public GestorDeArchivos()
         {
@@ -101,13 +102,6 @@ namespace Project_MemoryKidz
             return imageIndex;
         }
 
-        public void loadButtonAction()
-        {
-            filePath = textBoxPath.Text;
-            loadFilesAndDirectories();
-            isFile = false;
-        }
-
         private void searchButton_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folder = new FolderBrowserDialog())
@@ -143,17 +137,15 @@ namespace Project_MemoryKidz
         {
             if (listViewFiles.SelectedItems.Count > 0)
             {
-                selectedItemName = listViewFiles.SelectedItems[0].Text; 
-
-                
+                selectedItemName = listViewFiles.SelectedItems[0].Text;
                 string newPath = Path.Combine(filePath, selectedItemName);
 
-                
                 if (Directory.Exists(newPath))
                 {
-                    filePath = newPath; 
-                    textBoxPath.Text = filePath; 
-                    loadFilesAndDirectories(); 
+                    directoryHistory.Push(filePath);
+                    filePath = newPath;
+                    textBoxPath.Text = filePath;
+                    loadFilesAndDirectories();
                 }
                 else
                 {
@@ -161,5 +153,22 @@ namespace Project_MemoryKidz
                 }
             }
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            if (directoryHistory.Count > 0)
+            {
+                filePath = directoryHistory.Pop();
+                textBoxPath.Text = filePath;
+                loadFilesAndDirectories();
+            }
+            else
+            {
+                MessageBox.Show("No hay directorios anteriores.");
+            }
+
+        }
+
+        
     }
 }

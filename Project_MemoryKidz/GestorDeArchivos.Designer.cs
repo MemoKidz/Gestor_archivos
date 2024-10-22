@@ -49,6 +49,7 @@
             this.backButton.Size = new System.Drawing.Size(40, 40);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // searchButton
             // 
@@ -76,7 +77,7 @@
             this.textBoxPath.Location = new System.Drawing.Point(101, 40);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(729, 20);
-            this.textBoxPath.TabIndex = 3;
+            this.textBoxPath.TabIndex = 3;           
             // 
             // groupBox1
             // 
@@ -94,14 +95,17 @@
             // 
             // listViewFiles
             // 
+            this.listViewFiles.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.listViewFiles.HideSelection = false;
+            this.listViewFiles.LargeImageList = this.imageList1;
             this.listViewFiles.Location = new System.Drawing.Point(15, 125);
+            this.listViewFiles.MultiSelect = false;
             this.listViewFiles.Name = "listViewFiles";
+            this.listViewFiles.RightToLeftLayout = true;
             this.listViewFiles.Size = new System.Drawing.Size(924, 467);
             this.listViewFiles.SmallImageList = this.imageList1;
             this.listViewFiles.TabIndex = 4;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
-            this.listViewFiles.View = System.Windows.Forms.View.SmallIcon;
             this.listViewFiles.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewFiles_ItemSelectionChanged);
             this.listViewFiles.DoubleClick += new System.EventHandler(this.listViewFiles_DoubleClick);
             // 
