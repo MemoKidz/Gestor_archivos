@@ -148,8 +148,15 @@ namespace Project_MemoryKidz
                     loadFilesAndDirectories();
                 }
                 else
-                {
-                    MessageBox.Show("Has seleccionado un archivo: " + selectedItemName);
+                {                   
+                    try
+                    {
+                        System.Diagnostics.Process.Start(newPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+                    }
                 }
             }
         }

@@ -77,7 +77,7 @@
             this.textBoxPath.Location = new System.Drawing.Point(101, 40);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(729, 20);
-            this.textBoxPath.TabIndex = 3;           
+            this.textBoxPath.TabIndex = 3;
             // 
             // groupBox1
             // 
