@@ -91,7 +91,7 @@
             this.groupBox1.Size = new System.Drawing.Size(958, 610);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar ficheros JSON";
+            this.groupBox1.Text = "Buscar ficheros ";
             // 
             // listViewFiles
             // 
