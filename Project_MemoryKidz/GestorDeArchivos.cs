@@ -86,6 +86,8 @@ namespace Project_MemoryKidz
                     imageIndex = 4;
                     break;
                 case ".png":
+                case ".jpg":
+                case ".jpeg":
                     imageIndex = 5;
                     break;
                 case ".mp3":
@@ -169,6 +171,8 @@ namespace Project_MemoryKidz
             }
         }
 
+
+
         private void backButton_Click(object sender, EventArgs e)
         {
             if (directoryHistory.Count > 0)
@@ -182,8 +186,6 @@ namespace Project_MemoryKidz
                 MessageBox.Show("No hay directorios anteriores.");
             }
 
-        }
-
-        
+        }        
     }
 }
