@@ -45,5 +45,3 @@ Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por fa
 
 
 ¡Gracias por usar el Explorador de Archivos JSON para nuestro juego!
-```
-
