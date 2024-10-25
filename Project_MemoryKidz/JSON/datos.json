@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Avatar": "Tigre",
+    "tiempoNivel1": 120,
+    "tiempoNivel2": 150,
+    "tiempoNivel3": 180,
+    "tiempoNivel4": 200,
+    "fallos": 3,
+    "fechaHora": "2024-10-23T14:30:00"
+  },
+  {
+    "Avatar": "Leon",
+    "tiempoNivel1": 100,
+    "tiempoNivel2": 130,
+    "tiempoNivel3": 160,
+    "tiempoNivel4": 190,
+    "fallos": 2,
+    "fechaHora": "2024-10-23T15:00:00"
+  },
+  {
+    "Avatar": "Jirafa",
+    "tiempoNivel1": 110,
+    "tiempoNivel2": 140,
+    "tiempoNivel3": 170,
+    "tiempoNivel4": 220,
+    "fallos": 4,
+    "fechaHora": "2024-10-23T15:30:00"
+  },
+  {
+    "Avatar": "Tigre",
+    "tiempoNivel1": 130,
+    "tiempoNivel2": 160,
+    "tiempoNivel3": 190,
+    "tiempoNivel4": 210,
+    "fallos": 1,
+    "fechaHora": "2024-10-23T16:00:00"
+  }
+]

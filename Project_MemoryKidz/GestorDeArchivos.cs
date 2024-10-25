@@ -15,7 +15,7 @@ namespace Project_MemoryKidz
     public partial class GestorDeArchivos : Form
     {
 
-        private string filePath = "D:";
+        private string filePath = "C:";
         private bool isFile = false;
         private string selectedItemName = "";
         private Stack<string> directoryHistory = new Stack<string>();
@@ -63,7 +63,7 @@ namespace Project_MemoryKidz
             }
             catch (Exception ex)
             {
-               
+                MessageBox.Show("Error al cargar los archivos y directorios");
             }
         }
 
@@ -86,6 +86,8 @@ namespace Project_MemoryKidz
                     imageIndex = 4;
                     break;
                 case ".png":
+                case ".jpg":
+                case ".jpeg":
                     imageIndex = 5;
                     break;
                 case ".mp3":
@@ -148,18 +150,28 @@ namespace Project_MemoryKidz
                     loadFilesAndDirectories();
                 }
                 else
-                {                   
-                    try
+                {          
+                    if (Path.GetExtension(newPath).ToLower() == ".json")
                     {
-                        System.Diagnostics.Process.Start(newPath);
+                        LectorJson lector = new LectorJson(newPath);
+                        lector.ShowDialog();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
-                    }
+                        try
+                        {
+                            System.Diagnostics.Process.Start(newPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+                        }
+                    }                    
                 }
             }
         }
+
+
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -174,8 +186,6 @@ namespace Project_MemoryKidz
                 MessageBox.Show("No hay directorios anteriores.");
             }
 
-        }
-
-        
+        }        
     }
 }
