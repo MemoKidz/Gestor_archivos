@@ -37,6 +37,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.changeNameButton = new System.Windows.Forms.Button();
+            this.createButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +84,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.listViewFiles);
+            this.groupBox1.Controls.Add(this.changeNameButton);
+            this.groupBox1.Controls.Add(this.createButton);
             this.groupBox1.Controls.Add(this.textBoxPath);
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.labelRoute);
@@ -123,6 +129,34 @@
             this.imageList1.Images.SetKeyName(7, "mp4-file.png");
             this.imageList1.Images.SetKeyName(8, "unknown.png");
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(381, 79);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(100, 40);
+            this.deleteButton.TabIndex = 12;
+            this.deleteButton.Text = "Borrar";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // changeNameButton
+            // 
+            this.changeNameButton.Location = new System.Drawing.Point(101, 79);
+            this.changeNameButton.Name = "changeNameButton";
+            this.changeNameButton.Size = new System.Drawing.Size(112, 40);
+            this.changeNameButton.TabIndex = 11;
+            this.changeNameButton.Text = "Cambiar Nombre";
+            this.changeNameButton.UseVisualStyleBackColor = true;
+            // 
+            // createButton
+            // 
+            this.createButton.Location = new System.Drawing.Point(247, 79);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(98, 39);
+            this.createButton.TabIndex = 10;
+            this.createButton.Text = "Crear";
+            this.createButton.UseVisualStyleBackColor = true;
+            // 
             // GestorDeArchivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +182,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listViewFiles;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button changeNameButton;
+        private System.Windows.Forms.Button createButton;
     }
 }
 

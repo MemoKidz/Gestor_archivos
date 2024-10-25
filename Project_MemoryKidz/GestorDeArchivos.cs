@@ -29,6 +29,7 @@ namespace Project_MemoryKidz
         private void GestorDeArchivos_Load(object sender, EventArgs e)
         {
             textBoxPath.Text = filePath;
+            deleteButton.Enabled = false;
             loadFilesAndDirectories();
         }
 
@@ -121,7 +122,8 @@ namespace Project_MemoryKidz
 
         private void listViewFiles_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            selectedItemName = e.Item.Text;
+            selectedItemName = e.IsSelected ? e.Item.Text : "";
+            deleteButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
 
             FileAttributes fileAttr = File.GetAttributes(filePath + "/" + selectedItemName);
             if ((fileAttr & FileAttributes.Directory) == FileAttributes.Directory)
@@ -148,6 +150,7 @@ namespace Project_MemoryKidz
                     filePath = newPath;
                     textBoxPath.Text = filePath;
                     loadFilesAndDirectories();
+                    deleteButton.Enabled = false;
                 }
                 else
                 {          
@@ -186,6 +189,38 @@ namespace Project_MemoryKidz
                 MessageBox.Show("No hay directorios anteriores.");
             }
 
-        }        
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (selectedItemName != "")
+            {
+                DialogResult dialog = MessageBox.Show("¿Estas seguro de esta acción?", "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    string newPath = Path.Combine(filePath, selectedItemName);
+                    if (Directory.Exists(newPath))
+                    {
+                        Directory.Delete(newPath);
+                    }
+                    else
+                    {
+                        File.Delete(newPath);
+                    }
+                    loadFilesAndDirectories();
+                    deleteButton.Enabled = false;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningún archivo!");
+            }
+        }
     }
 }
