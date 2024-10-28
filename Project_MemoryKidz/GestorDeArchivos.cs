@@ -252,6 +252,48 @@ namespace Project_MemoryKidz
         private void changeNameButton_Click(object sender, EventArgs e)
         {
 
+            // Pedir al usuario el nuevo nombre
+            string nuevoNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre:", "Renombrar", selectedItemName);
+
+            // Validar que el usuario no haya cancelado
+            if (string.IsNullOrEmpty(nuevoNombre))
+            {
+                return; // Si se cancela, no hacemos nada
+            }
+
+            try
+            {
+                string currentPath = Path.Combine(filePath, selectedItemName);
+                string newPath = Path.Combine(filePath, nuevoNombre);
+
+                // Verificar si el nuevo nombre ya existe
+                if (File.Exists(newPath) || Directory.Exists(newPath))
+                {
+                    MessageBox.Show("Ya existe un archivo o carpeta con ese nombre.");
+                    return;
+                }
+
+                // Renombrar archivo o carpeta
+                if (isFile)
+                {
+                    File.Move(currentPath, newPath);
+                }
+                else
+                {
+                    Directory.Move(currentPath, newPath);
+                }
+
+                // Recargar los archivos y directorios
+                changeNameButton.Enabled = false;
+                deleteButton.Enabled = false;
+                loadFilesAndDirectories(null);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al renombrar: " + ex.Message);
+            }
+
         }
     }
 }
