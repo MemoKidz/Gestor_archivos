@@ -30,6 +30,7 @@ namespace Project_MemoryKidz
         {
             textBoxPath.Text = filePath;
             deleteButton.Enabled = false;
+            changeNameButton.Enabled = false;
             loadFilesAndDirectories(null);
         }
 
@@ -129,6 +130,8 @@ namespace Project_MemoryKidz
         {
             selectedItemName = e.IsSelected ? e.Item.Text : "";
             deleteButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
+            changeNameButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
+
 
             FileAttributes fileAttr = File.GetAttributes(filePath + "/" + selectedItemName);
             if ((fileAttr & FileAttributes.Directory) == FileAttributes.Directory)
@@ -156,6 +159,7 @@ namespace Project_MemoryKidz
                     textBoxPath.Text = filePath;
                     loadFilesAndDirectories(null);
                     deleteButton.Enabled = false;
+                    changeNameButton.Enabled = false;
                 }
                 else
                 {
@@ -242,6 +246,11 @@ namespace Project_MemoryKidz
 
                 }
             }
+
+        }
+
+        private void changeNameButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -34,12 +34,12 @@
             this.labelRoute = new System.Windows.Forms.Label();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.filterButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.changeNameButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
-            this.filterButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,13 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // filterButton
+            // 
+            resources.ApplyResources(this.filterButton, "filterButton");
+            this.filterButton.Name = "filterButton";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // deleteButton
             // 
@@ -114,19 +121,13 @@
             resources.ApplyResources(this.changeNameButton, "changeNameButton");
             this.changeNameButton.Name = "changeNameButton";
             this.changeNameButton.UseVisualStyleBackColor = true;
+            this.changeNameButton.Click += new System.EventHandler(this.changeNameButton_Click);
             // 
             // createButton
             // 
             resources.ApplyResources(this.createButton, "createButton");
             this.createButton.Name = "createButton";
             this.createButton.UseVisualStyleBackColor = true;
-            // 
-            // filterButton
-            // 
-            resources.ApplyResources(this.filterButton, "filterButton");
-            this.filterButton.Name = "filterButton";
-            this.filterButton.UseVisualStyleBackColor = true;
-            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // backButton
             // 

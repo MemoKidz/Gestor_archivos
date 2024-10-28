@@ -269,7 +269,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACk
-        bAEAAk1TRnQBSQFMAgEBCQEAATgBAAE4AQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
+        bAEAAk1TRnQBSQFMAgEBCQEAAUABAAFAAQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
         AwABkAMAAQEBAAEgBgABsAEB/wD/AP8A/wD/AP8A/wD/AP8ANgAD9AH/A+4B/wPeAf8B7gHPAbEB/wHu
         AcABmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGa
         Af8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHe
@@ -2006,9 +2006,6 @@
         HZRZ0FNM1TJjOVADqviHRqUPUknr07nJiPLc1BSTRQG1rU86GUmSJEmSJEmSJEmSJEmSJEmSJEmSJEmS
         JEmSJEmSJEmSJEmSJEmSJGnx/A9G/QiRZu0wxwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Explorador de archivos</value>
