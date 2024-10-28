@@ -30,60 +30,40 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorDeArchivos));
-            this.backButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.labelRoute = new System.Windows.Forms.Label();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.deleteButton = new System.Windows.Forms.Button();
             this.changeNameButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
+            this.filterButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // backButton
-            // 
-            this.backButton.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.back_button;
-            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.backButton.Location = new System.Drawing.Point(15, 28);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(40, 40);
-            this.backButton.TabIndex = 0;
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
             // searchButton
             // 
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(840, 28);
+            resources.ApplyResources(this.searchButton, "searchButton");
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(100, 40);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Buscar";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // labelRoute
             // 
-            this.labelRoute.AutoSize = true;
-            this.labelRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRoute.Location = new System.Drawing.Point(58, 40);
+            resources.ApplyResources(this.labelRoute, "labelRoute");
             this.labelRoute.Name = "labelRoute";
-            this.labelRoute.Size = new System.Drawing.Size(42, 17);
-            this.labelRoute.TabIndex = 2;
-            this.labelRoute.Text = "Ruta:";
             // 
             // textBoxPath
             // 
-            this.textBoxPath.Location = new System.Drawing.Point(101, 40);
+            resources.ApplyResources(this.textBoxPath, "textBoxPath");
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(729, 20);
-            this.textBoxPath.TabIndex = 3;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.filterButton);
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.listViewFiles);
             this.groupBox1.Controls.Add(this.changeNameButton);
@@ -92,25 +72,25 @@
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.labelRoute);
             this.groupBox1.Controls.Add(this.searchButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 610);
-            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar ficheros ";
+            // 
+            // deleteButton
+            // 
+            resources.ApplyResources(this.deleteButton, "deleteButton");
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // listViewFiles
             // 
-            this.listViewFiles.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            resources.ApplyResources(this.listViewFiles, "listViewFiles");
             this.listViewFiles.HideSelection = false;
             this.listViewFiles.LargeImageList = this.imageList1;
-            this.listViewFiles.Location = new System.Drawing.Point(15, 125);
             this.listViewFiles.MultiSelect = false;
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.RightToLeftLayout = true;
-            this.listViewFiles.Size = new System.Drawing.Size(924, 467);
             this.listViewFiles.SmallImageList = this.imageList1;
-            this.listViewFiles.TabIndex = 4;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
             this.listViewFiles.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewFiles_ItemSelectionChanged);
             this.listViewFiles.DoubleClick += new System.EventHandler(this.listViewFiles_DoubleClick);
@@ -129,43 +109,40 @@
             this.imageList1.Images.SetKeyName(7, "mp4-file.png");
             this.imageList1.Images.SetKeyName(8, "unknown.png");
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(381, 79);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(100, 40);
-            this.deleteButton.TabIndex = 12;
-            this.deleteButton.Text = "Borrar";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // changeNameButton
             // 
-            this.changeNameButton.Location = new System.Drawing.Point(101, 79);
+            resources.ApplyResources(this.changeNameButton, "changeNameButton");
             this.changeNameButton.Name = "changeNameButton";
-            this.changeNameButton.Size = new System.Drawing.Size(112, 40);
-            this.changeNameButton.TabIndex = 11;
-            this.changeNameButton.Text = "Cambiar Nombre";
             this.changeNameButton.UseVisualStyleBackColor = true;
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(247, 79);
+            resources.ApplyResources(this.createButton, "createButton");
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(98, 39);
-            this.createButton.TabIndex = 10;
-            this.createButton.Text = "Crear";
             this.createButton.UseVisualStyleBackColor = true;
+            // 
+            // filterButton
+            // 
+            resources.ApplyResources(this.filterButton, "filterButton");
+            this.filterButton.Name = "filterButton";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.back_button;
+            resources.ApplyResources(this.backButton, "backButton");
+            this.backButton.Name = "backButton";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // GestorDeArchivos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 634);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestorDeArchivos";
-            this.Text = "Explorador de archivos";
             this.Load += new System.EventHandler(this.GestorDeArchivos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -185,6 +162,7 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button changeNameButton;
         private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Button filterButton;
     }
 }
 

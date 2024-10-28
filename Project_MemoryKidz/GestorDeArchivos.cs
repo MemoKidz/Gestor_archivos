@@ -30,10 +30,10 @@ namespace Project_MemoryKidz
         {
             textBoxPath.Text = filePath;
             deleteButton.Enabled = false;
-            loadFilesAndDirectories();
+            loadFilesAndDirectories(null);
         }
 
-        private void loadFilesAndDirectories()
+        private void loadFilesAndDirectories(string tipoArchivo)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Project_MemoryKidz
                 FileInfo[] files = fileList.GetFiles();
                 DirectoryInfo[] directories = fileList.GetDirectories();
 
-              
+
                 foreach (var directory in directories)
                 {
                     ListViewItem item = new ListViewItem(directory.Name);
@@ -55,11 +55,16 @@ namespace Project_MemoryKidz
 
                 foreach (var file in files)
                 {
-                    ListViewItem item = new ListViewItem(file.Name);
 
-                    item.ImageIndex = getImageIndexByExtension(file.Extension);
-                    
-                    listViewFiles.Items.Add(item);
+                    if (tipoArchivo == null || file.Extension.Equals(tipoArchivo, StringComparison.OrdinalIgnoreCase))
+                    {
+                        ListViewItem item = new ListViewItem(file.Name);
+
+                        item.ImageIndex = getImageIndexByExtension(file.Extension);
+
+                        listViewFiles.Items.Add(item);
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -113,9 +118,9 @@ namespace Project_MemoryKidz
 
                 if (result == DialogResult.OK)
                 {
-                    filePath = folder.SelectedPath;     
-                    textBoxPath.Text = filePath;        
-                    loadFilesAndDirectories();         
+                    filePath = folder.SelectedPath;
+                    textBoxPath.Text = filePath;
+                    loadFilesAndDirectories(null);
                 }
             }
         }
@@ -149,11 +154,11 @@ namespace Project_MemoryKidz
                     directoryHistory.Push(filePath);
                     filePath = newPath;
                     textBoxPath.Text = filePath;
-                    loadFilesAndDirectories();
+                    loadFilesAndDirectories(null);
                     deleteButton.Enabled = false;
                 }
                 else
-                {          
+                {
                     if (Path.GetExtension(newPath).ToLower() == ".json")
                     {
                         LectorJson lector = new LectorJson(newPath);
@@ -169,7 +174,7 @@ namespace Project_MemoryKidz
                         {
                             MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
                         }
-                    }                    
+                    }
                 }
             }
         }
@@ -182,7 +187,7 @@ namespace Project_MemoryKidz
             {
                 filePath = directoryHistory.Pop();
                 textBoxPath.Text = filePath;
-                loadFilesAndDirectories();
+                loadFilesAndDirectories(null);
             }
             else
             {
@@ -212,7 +217,7 @@ namespace Project_MemoryKidz
                     {
                         File.Delete(newPath);
                     }
-                    loadFilesAndDirectories();
+                    loadFilesAndDirectories(null);
                     deleteButton.Enabled = false;
                 }
 
@@ -221,6 +226,23 @@ namespace Project_MemoryKidz
             {
                 MessageBox.Show("No se ha seleccionado ningún archivo!");
             }
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+
+
+            using (FormularioFiltrar filtro = new FormularioFiltrar())
+            {
+                if (filtro.ShowDialog() == DialogResult.OK)
+                {
+                    String tipoArchivo = filtro.tipoArchivoSeleccionado.ToString();
+
+                    loadFilesAndDirectories(tipoArchivo);
+
+                }
+            }
+
         }
     }
 }

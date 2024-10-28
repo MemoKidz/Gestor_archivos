@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioFiltrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioFiltrar.Designer.cs">
+      <DependentUpon>FormularioFiltrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorDeArchivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="Partida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioFiltrar.resx">
+      <DependentUpon>FormularioFiltrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestorDeArchivos.resx">
       <DependentUpon>GestorDeArchivos.cs</DependentUpon>
     </EmbeddedResource>
