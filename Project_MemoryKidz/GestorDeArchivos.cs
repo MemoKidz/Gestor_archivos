@@ -295,5 +295,44 @@ namespace Project_MemoryKidz
             }
 
         }
+
+        private void createFolderButton_Click(object sender, EventArgs e)
+        {
+
+            string newFolderName = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre de la nueva carpeta:", "Crear carpeta");
+            //filePath es la variable del path actual
+
+            if (string.IsNullOrEmpty(newFolderName))
+            {
+                return; // Si se cancela, no hacemos nada
+            }
+
+            try
+            {
+                string newCreationPath = Path.Combine(filePath, newFolderName);
+
+                if (!Directory.Exists(newCreationPath))
+                {
+                    Directory.CreateDirectory(newCreationPath);
+                    MessageBox.Show("Nueva carpeta creada!");
+                    loadFilesAndDirectories(null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear nueva carpeta: " + ex.Message);
+            }
+        }
+
+        private void createFileButton_Click(object sender, EventArgs e)
+        {
+            using (FormularioCrearArchivo nuevoArchivo = new FormularioCrearArchivo())
+            {
+                if (nuevoArchivo.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }
