@@ -138,6 +138,7 @@
             resources.ApplyResources(this.createFolderButton, "createFolderButton");
             this.createFolderButton.Name = "createFolderButton";
             this.createFolderButton.UseVisualStyleBackColor = true;
+            this.createFolderButton.Click += new System.EventHandler(this.createFolderButton_Click);
             // 
             // createFileButton
             // 
