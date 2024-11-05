@@ -12,7 +12,6 @@ namespace Project_MemoryKidz
         public int TiempoNivel1 { get; set; }
         public int TiempoNivel2 { get; set; }
         public int TiempoNivel3 { get; set; }
-        public int TiempoNivel4 { get; set; }
         public int Fallos { get; set; }
         public DateTime FechaHora { get; set; }
     }
