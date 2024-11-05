@@ -12,20 +12,50 @@ using System.Windows.Forms;
 
 namespace Project_MemoryKidz
 {
+
+    /// <summary>
+    /// Representa el formulario principal para gestionar archivos y directorios.
+    /// Permite al usuario navegar por carpetas, visualizar y gestionar archivos (renombrar, eliminar, crear).
+    /// </summary>
     public partial class GestorDeArchivos : Form
     {
 
+        /// <summary>
+        /// Ruta del directorio actual.
+        /// </summary>
         private string filePath = "C:";
+
+        /// <summary>
+        /// Indica si el ítem seleccionado es un archivo.
+        /// </summary>
         private bool isFile = false;
+
+        /// <summary>
+        /// Nombre del archivo o directorio seleccionado.
+        /// </summary>
         private string selectedItemName = "";
+
+        /// <summary>
+        /// Historial de directorios para navegación hacia atrás.
+        /// </summary>
         private Stack<string> directoryHistory = new Stack<string>();
 
+
+        /// <summary>
+        /// Inicializa una nueva instancia del formulario GestorDeArchivos.
+        /// </summary>
         public GestorDeArchivos()
         {
             InitializeComponent();
         }
 
 
+        /// <summary>
+        /// Evento que se ejecuta al cargar el formulario. 
+        /// Configura la interfaz de usuario y carga los archivos y directorios del directorio inicial.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento.</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void GestorDeArchivos_Load(object sender, EventArgs e)
         {
             textBoxPath.Text = filePath;
@@ -34,6 +64,11 @@ namespace Project_MemoryKidz
             loadFilesAndDirectories(null);
         }
 
+        /// <summary>
+        /// Carga los archivos y directorios del directorio actual.
+        /// Filtra los archivos por tipo si se especifica un tipo de archivo.
+        /// </summary>
+        /// <param name="tipoArchivo">El tipo de archivo para filtrar, o null para cargar todos los archivos.</param>
         private void loadFilesAndDirectories(string tipoArchivo)
         {
             try
@@ -70,10 +105,16 @@ namespace Project_MemoryKidz
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los archivos y directorios");
+                MessageBox.Show("Error al cargar los archivos y directorios:" + ex.Message);
             }
         }
 
+
+        /// <summary>
+        /// Obtiene el índice de imagen correspondiente a la extensión del archivo.
+        /// </summary>
+        /// <param name="extension">La extensión del archivo (por ejemplo, .json, .pdf, .jpg).</param>
+        /// <returns>El índice de la imagen asociada con la extensión del archivo.</returns>
         private int getImageIndexByExtension(string extension)
         {
             int imageIndex = 8;
@@ -111,6 +152,13 @@ namespace Project_MemoryKidz
             return imageIndex;
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace clic en el botón de búsqueda para seleccionar una nueva ruta de carpeta.
+        /// Abre un cuadro de diálogo para seleccionar un directorio.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de búsqueda).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void searchButton_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folder = new FolderBrowserDialog())
@@ -126,6 +174,13 @@ namespace Project_MemoryKidz
             }
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se selecciona un ítem en la lista de archivos y directorios.
+        /// Habilita o deshabilita los botones de eliminar y cambiar nombre, dependiendo de si un archivo o directorio está seleccionado.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (la lista de archivos y directorios).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void listViewFiles_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             selectedItemName = e.IsSelected ? e.Item.Text : "";
@@ -145,6 +200,13 @@ namespace Project_MemoryKidz
             }
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace doble clic sobre un ítem de la lista de archivos.
+        /// Si es un directorio, navega a él. Si es un archivo, intenta abrirlo o procesarlo si es un archivo JSON.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (la lista de archivos y directorios).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void listViewFiles_DoubleClick(object sender, EventArgs e)
         {
             if (listViewFiles.SelectedItems.Count > 0)
@@ -184,7 +246,11 @@ namespace Project_MemoryKidz
         }
 
 
-
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace clic en el botón de retroceso para volver al directorio anterior en el historial de navegación.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de retroceso).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void backButton_Click(object sender, EventArgs e)
         {
             if (directoryHistory.Count > 0)
@@ -200,11 +266,12 @@ namespace Project_MemoryKidz
 
         }
 
+
         /// <summary>
-        /// 
+        /// Evento que se ejecuta cuando se hace clic en el botón de eliminar para borrar el archivo o directorio seleccionado.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">El objeto que originó el evento (el botón de eliminar).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (selectedItemName != "")
@@ -232,6 +299,12 @@ namespace Project_MemoryKidz
             }
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace clic en el botón de filtro para aplicar un filtro de tipo de archivo.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de filtro).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void filterButton_Click(object sender, EventArgs e)
         {
 
@@ -249,16 +322,22 @@ namespace Project_MemoryKidz
 
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace clic en el botón de cambiar nombre para renombrar el archivo o directorio seleccionado.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de cambiar nombre).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void changeNameButton_Click(object sender, EventArgs e)
         {
 
-            // Pedir al usuario el nuevo nombre
+            
             string nuevoNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre:", "Renombrar", selectedItemName);
 
-            // Validar que el usuario no haya cancelado
+            
             if (string.IsNullOrEmpty(nuevoNombre))
             {
-                return; // Si se cancela, no hacemos nada
+                return; 
             }
 
             try
@@ -296,6 +375,13 @@ namespace Project_MemoryKidz
 
         }
 
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se hace clic en el botón de crear carpeta.
+        /// Permite crear una nueva carpeta en el directorio actual.
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de crear carpeta).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void createFolderButton_Click(object sender, EventArgs e)
         {
 
