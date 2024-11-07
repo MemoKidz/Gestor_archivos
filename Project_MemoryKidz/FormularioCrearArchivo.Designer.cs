@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.createFileGroupBox = new System.Windows.Forms.GroupBox();
+            this.createFileButton = new System.Windows.Forms.Button();
             this.createFileDataGridView = new System.Windows.Forms.DataGridView();
             this.avatarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level1TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level2TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level3TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.failsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createFileButton = new System.Windows.Forms.Button();
             this.createFileGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createFileDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +52,16 @@
             this.createFileGroupBox.TabStop = false;
             this.createFileGroupBox.Text = "Crear nuevo fichero";
             // 
+            // createFileButton
+            // 
+            this.createFileButton.Location = new System.Drawing.Point(6, 186);
+            this.createFileButton.Name = "createFileButton";
+            this.createFileButton.Size = new System.Drawing.Size(86, 31);
+            this.createFileButton.TabIndex = 1;
+            this.createFileButton.Text = "Crear archivo";
+            this.createFileButton.UseVisualStyleBackColor = true;
+            this.createFileButton.Click += new System.EventHandler(this.createFileButton_Click);
+            // 
             // createFileDataGridView
             // 
             this.createFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -60,7 +69,6 @@
             this.avatarColumn,
             this.level1TimeColumn,
             this.level2TimeColumn,
-            this.Column1,
             this.level3TimeColumn,
             this.failsColumn,
             this.dateColumn});
@@ -68,7 +76,7 @@
             this.createFileDataGridView.Name = "createFileDataGridView";
             this.createFileDataGridView.Size = new System.Drawing.Size(744, 150);
             this.createFileDataGridView.TabIndex = 0;
-            this.createFileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.createFileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.createFileDataGridView_CellContentClick);
             // 
             // avatarColumn
             // 
@@ -85,11 +93,6 @@
             this.level2TimeColumn.HeaderText = "Tiempo Segundo Nivel";
             this.level2TimeColumn.Name = "level2TimeColumn";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
             // level3TimeColumn
             // 
             this.level3TimeColumn.HeaderText = "Tiempo Tercer Nivel";
@@ -104,15 +107,6 @@
             // 
             this.dateColumn.HeaderText = "Fecha y Hora";
             this.dateColumn.Name = "dateColumn";
-            // 
-            // createFileButton
-            // 
-            this.createFileButton.Location = new System.Drawing.Point(6, 228);
-            this.createFileButton.Name = "createFileButton";
-            this.createFileButton.Size = new System.Drawing.Size(75, 23);
-            this.createFileButton.TabIndex = 1;
-            this.createFileButton.Text = "Crear archivo";
-            this.createFileButton.UseVisualStyleBackColor = true;
             // 
             // FormularioCrearArchivo
             // 
@@ -131,13 +125,12 @@
         #endregion
         private System.Windows.Forms.GroupBox createFileGroupBox;
         private System.Windows.Forms.DataGridView createFileDataGridView;
+        private System.Windows.Forms.Button createFileButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn avatarColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn level1TimeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn level2TimeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn level3TimeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn failsColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
-        private System.Windows.Forms.Button createFileButton;
     }
 }
