@@ -16,5 +16,10 @@ namespace Project_MemoryKidz
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // e.ColumnIndex = 0;
+        }
     }
 }
