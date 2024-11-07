@@ -28,127 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileTypeGroupBox = new System.Windows.Forms.GroupBox();
-            this.pdfRadioButton = new System.Windows.Forms.RadioButton();
-            this.docRadioButton = new System.Windows.Forms.RadioButton();
-            this.jsonRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelNewFileName = new System.Windows.Forms.Label();
-            this.acceptNewFileButton = new System.Windows.Forms.Button();
-            this.cancelNewFileButton = new System.Windows.Forms.Button();
-            this.fileTypeGroupBox.SuspendLayout();
+            this.createFileGroupBox = new System.Windows.Forms.GroupBox();
+            this.createFileDataGridView = new System.Windows.Forms.DataGridView();
+            this.avatarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.level1TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.level2TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.level3TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.failsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createFileButton = new System.Windows.Forms.Button();
+            this.createFileGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createFileDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // fileTypeGroupBox
+            // createFileGroupBox
             // 
-            this.fileTypeGroupBox.Controls.Add(this.pdfRadioButton);
-            this.fileTypeGroupBox.Controls.Add(this.docRadioButton);
-            this.fileTypeGroupBox.Controls.Add(this.jsonRadioButton);
-            this.fileTypeGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.fileTypeGroupBox.Name = "fileTypeGroupBox";
-            this.fileTypeGroupBox.Size = new System.Drawing.Size(179, 106);
-            this.fileTypeGroupBox.TabIndex = 1;
-            this.fileTypeGroupBox.TabStop = false;
-            this.fileTypeGroupBox.Text = "Seleccione el tipo de archivo";
+            this.createFileGroupBox.Controls.Add(this.createFileButton);
+            this.createFileGroupBox.Controls.Add(this.createFileDataGridView);
+            this.createFileGroupBox.Location = new System.Drawing.Point(13, 12);
+            this.createFileGroupBox.Name = "createFileGroupBox";
+            this.createFileGroupBox.Size = new System.Drawing.Size(825, 425);
+            this.createFileGroupBox.TabIndex = 1;
+            this.createFileGroupBox.TabStop = false;
+            this.createFileGroupBox.Text = "Crear nuevo fichero";
             // 
-            // pdfRadioButton
+            // createFileDataGridView
             // 
-            this.pdfRadioButton.AutoSize = true;
-            this.pdfRadioButton.Location = new System.Drawing.Point(6, 52);
-            this.pdfRadioButton.Name = "pdfRadioButton";
-            this.pdfRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.pdfRadioButton.Size = new System.Drawing.Size(83, 17);
-            this.pdfRadioButton.TabIndex = 9;
-            this.pdfRadioButton.TabStop = true;
-            this.pdfRadioButton.Text = ".pdf";
-            this.pdfRadioButton.UseVisualStyleBackColor = true;
+            this.createFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.createFileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.avatarColumn,
+            this.level1TimeColumn,
+            this.level2TimeColumn,
+            this.Column1,
+            this.level3TimeColumn,
+            this.failsColumn,
+            this.dateColumn});
+            this.createFileDataGridView.Location = new System.Drawing.Point(6, 30);
+            this.createFileDataGridView.Name = "createFileDataGridView";
+            this.createFileDataGridView.Size = new System.Drawing.Size(744, 150);
+            this.createFileDataGridView.TabIndex = 0;
+            this.createFileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // docRadioButton
+            // avatarColumn
             // 
-            this.docRadioButton.AutoSize = true;
-            this.docRadioButton.Location = new System.Drawing.Point(6, 75);
-            this.docRadioButton.Name = "docRadioButton";
-            this.docRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.docRadioButton.Size = new System.Drawing.Size(86, 17);
-            this.docRadioButton.TabIndex = 3;
-            this.docRadioButton.TabStop = true;
-            this.docRadioButton.Text = ".doc";
-            this.docRadioButton.UseVisualStyleBackColor = true;
+            this.avatarColumn.HeaderText = "Avatar";
+            this.avatarColumn.Name = "avatarColumn";
             // 
-            // jsonRadioButton
+            // level1TimeColumn
             // 
-            this.jsonRadioButton.AutoSize = true;
-            this.jsonRadioButton.Location = new System.Drawing.Point(6, 29);
-            this.jsonRadioButton.Name = "jsonRadioButton";
-            this.jsonRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.jsonRadioButton.Size = new System.Drawing.Size(87, 17);
-            this.jsonRadioButton.TabIndex = 0;
-            this.jsonRadioButton.TabStop = true;
-            this.jsonRadioButton.Text = ".json";
-            this.jsonRadioButton.UseVisualStyleBackColor = true;
+            this.level1TimeColumn.HeaderText = "Tiempo Primer Nivel";
+            this.level1TimeColumn.Name = "level1TimeColumn";
             // 
-            // textBox1
+            // level2TimeColumn
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 2;
+            this.level2TimeColumn.HeaderText = "Tiempo Segundo Nivel";
+            this.level2TimeColumn.Name = "level2TimeColumn";
             // 
-            // labelNewFileName
+            // Column1
             // 
-            this.labelNewFileName.AutoSize = true;
-            this.labelNewFileName.Location = new System.Drawing.Point(13, 135);
-            this.labelNewFileName.Name = "labelNewFileName";
-            this.labelNewFileName.Size = new System.Drawing.Size(102, 13);
-            this.labelNewFileName.TabIndex = 3;
-            this.labelNewFileName.Text = "Nombre del archivo:";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
-            // acceptNewFileButton
+            // level3TimeColumn
             // 
-            this.acceptNewFileButton.Location = new System.Drawing.Point(12, 180);
-            this.acceptNewFileButton.Name = "acceptNewFileButton";
-            this.acceptNewFileButton.Size = new System.Drawing.Size(75, 23);
-            this.acceptNewFileButton.TabIndex = 4;
-            this.acceptNewFileButton.Text = "Aceptar";
-            this.acceptNewFileButton.UseVisualStyleBackColor = true;
+            this.level3TimeColumn.HeaderText = "Tiempo Tercer Nivel";
+            this.level3TimeColumn.Name = "level3TimeColumn";
             // 
-            // cancelNewFileButton
+            // failsColumn
             // 
-            this.cancelNewFileButton.Location = new System.Drawing.Point(116, 180);
-            this.cancelNewFileButton.Name = "cancelNewFileButton";
-            this.cancelNewFileButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelNewFileButton.TabIndex = 5;
-            this.cancelNewFileButton.Text = "Cancelar";
-            this.cancelNewFileButton.UseVisualStyleBackColor = true;
+            this.failsColumn.HeaderText = "Fallos";
+            this.failsColumn.Name = "failsColumn";
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.HeaderText = "Fecha y Hora";
+            this.dateColumn.Name = "dateColumn";
+            // 
+            // createFileButton
+            // 
+            this.createFileButton.Location = new System.Drawing.Point(6, 228);
+            this.createFileButton.Name = "createFileButton";
+            this.createFileButton.Size = new System.Drawing.Size(75, 23);
+            this.createFileButton.TabIndex = 1;
+            this.createFileButton.Text = "Crear archivo";
+            this.createFileButton.UseVisualStyleBackColor = true;
             // 
             // FormularioCrearArchivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 229);
-            this.Controls.Add(this.cancelNewFileButton);
-            this.Controls.Add(this.acceptNewFileButton);
-            this.Controls.Add(this.labelNewFileName);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.fileTypeGroupBox);
+            this.ClientSize = new System.Drawing.Size(850, 449);
+            this.Controls.Add(this.createFileGroupBox);
             this.Name = "FormularioCrearArchivo";
             this.Text = "FormularioCrearArchivo";
-            this.fileTypeGroupBox.ResumeLayout(false);
-            this.fileTypeGroupBox.PerformLayout();
+            this.createFileGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.createFileDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox fileTypeGroupBox;
-        private System.Windows.Forms.RadioButton pdfRadioButton;
-        private System.Windows.Forms.RadioButton docRadioButton;
-        private System.Windows.Forms.RadioButton jsonRadioButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label labelNewFileName;
-        private System.Windows.Forms.Button acceptNewFileButton;
-        private System.Windows.Forms.Button cancelNewFileButton;
+        private System.Windows.Forms.GroupBox createFileGroupBox;
+        private System.Windows.Forms.DataGridView createFileDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn avatarColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn level1TimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn level2TimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn level3TimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn failsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
+        private System.Windows.Forms.Button createFileButton;
     }
 }

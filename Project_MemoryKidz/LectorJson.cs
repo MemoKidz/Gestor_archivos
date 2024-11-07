@@ -47,22 +47,27 @@ namespace Project_MemoryKidz
                 // Deserializa el contenido JSON a una lista de objetos de tipo Partida.
                 List<Partida> partidas = JsonConvert.DeserializeObject<List<Partida>>(jsonContent);
 
+
                 // Asigna la lista de partidas como fuente de datos del DataGridView.
                 dataGridView1.DataSource = partidas;
 
                 // Configura el ancho de las columnas para un mejor formato visual.
+
                 dataGridView1.Columns[0].Width = 80;
                 dataGridView1.Columns[1].Width = 110;
                 dataGridView1.Columns[2].Width = 110;
                 dataGridView1.Columns[3].Width = 110;
-                dataGridView1.Columns[5].Width = 78;
-                dataGridView1.Columns[6].Width = 110;
+                dataGridView1.Columns[4].Width = 78;
+                dataGridView1.Columns[5].Width = 110;
 
                 // Renombra los encabezados de las columnas.
                 dataGridView1.Columns[1].HeaderText = "Tiempo primer nivel";
                 dataGridView1.Columns[2].HeaderText = "Tiempo segundo nivel";
                 dataGridView1.Columns[3].HeaderText = "Tiempo tercer nivel";
-                dataGridView1.Columns[6].HeaderText = "Fecha y hora";
+
+
+                dataGridView1.Columns[5].HeaderText = "Fecha y hora";
+
             }
             catch (Exception ex)
             {
