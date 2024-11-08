@@ -14,6 +14,9 @@ namespace Project_MemoryKidz
 {
     public partial class FormularioCrearArchivo : Form
     {
+        
+        public string filePath { get; set; }
+
         public FormularioCrearArchivo()
         {
             InitializeComponent();
@@ -46,16 +49,13 @@ namespace Project_MemoryKidz
                 }
 
                 string jsonContent = JsonConvert.SerializeObject(partidas, Formatting.Indented);
-                string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON");
-                string filePath = Path.Combine(folderPath, "partidas.json"); // Aquí puedes especificar la ruta deseada
+
+                // string filePath = Path.Combine(folderPath, "partidas.json"); // Aquí puedes especificar la ruta deseada
+
+                String newPath = Path.Combine(filePath, "partidas.json");
 
 
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-
-                File.WriteAllText(filePath, jsonContent);
+                File.WriteAllText(newPath, jsonContent);
 
                 MessageBox.Show("Datos guardados exitosamente en el archivo JSON.");
             }
