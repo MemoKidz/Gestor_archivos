@@ -405,11 +405,13 @@ namespace Project_MemoryKidz
 
         private void createFileButton_Click(object sender, EventArgs e)
         {
-            using (FormularioCrearArchivo nuevoArchivo = new FormularioCrearArchivo())
+            using (FormularioCrearArchivo nuevoArchivoForm = new FormularioCrearArchivo())
             {
-                if (nuevoArchivo.ShowDialog() == DialogResult.OK)
-                {
+                nuevoArchivoForm.filePath = filePath;
 
+                if (nuevoArchivoForm.ShowDialog() == DialogResult.OK)
+                {
+                    loadFilesAndDirectories(null);
                 }
             }
         }
