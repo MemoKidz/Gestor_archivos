@@ -75,6 +75,9 @@ namespace Project_MemoryKidz
 
             }
 
+            this.DialogResult = DialogResult.OK;
+            this.Close(); 
+
         }
 
         private void createFileDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
