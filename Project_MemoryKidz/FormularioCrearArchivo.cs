@@ -14,7 +14,7 @@ namespace Project_MemoryKidz
 {
     public partial class FormularioCrearArchivo : Form
     {
-        
+
         public string filePath { get; set; }
 
         public FormularioCrearArchivo()
@@ -31,8 +31,18 @@ namespace Project_MemoryKidz
 
                 foreach (DataGridViewRow row in createFileDataGridView.Rows)
                 {
-
                     if (row.IsNewRow) continue;
+
+                    DateTime? dateTimeColumnValue = null;
+
+                    dateTimeColumnValue = (DateTime?)row.Cells["dateColumn"].Value;
+
+                    if (dateTimeColumnValue == null)
+                    {
+                        row.Cells["dateColumn"].Value = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"); ;
+                    }
+
+
 
                     Partida partida = new Partida
                     {
@@ -41,7 +51,7 @@ namespace Project_MemoryKidz
                         TiempoNivel2 = Convert.ToInt32(row.Cells["level2TimeColumn"].Value),
                         TiempoNivel3 = Convert.ToInt32(row.Cells["level3TimeColumn"].Value),
                         Fallos = Convert.ToInt32(row.Cells["failsColumn"].Value),
-                        FechaHora = Convert.ToDateTime(row.Cells["dateColumn"].Value)
+                        FechaHora = Convert.ToDateTime(row.Cells["dateColumn"].Value),
                     };
 
                     partidas.Add(partida);
@@ -64,6 +74,9 @@ namespace Project_MemoryKidz
                 MessageBox.Show("Error al guardar los datos en el archivo JSON: " + ex.Message);
 
             }
+
+            this.DialogResult = DialogResult.OK;
+            this.Close(); 
 
         }
 
