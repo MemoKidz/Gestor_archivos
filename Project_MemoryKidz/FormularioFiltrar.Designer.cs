@@ -186,8 +186,10 @@
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.fileTypeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(382, 79);
             this.Name = "FormularioFiltrar";
-            this.Text = "FormularioFiltrar";
+            this.Text = "Filtrar";
+            this.Load += new System.EventHandler(this.FormularioFiltrar_Load);
             this.fileTypeGroupBox.ResumeLayout(false);
             this.fileTypeGroupBox.PerformLayout();
             this.ResumeLayout(false);

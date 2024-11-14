@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\back-button.png" />
+    <Content Include="resources\background.jpeg" />
     <Content Include="resources\doc.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

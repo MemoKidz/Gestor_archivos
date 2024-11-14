@@ -16,7 +16,7 @@ namespace Project_MemoryKidz
         /// <summary>
         /// Ruta del directorio actual.
         /// </summary>
-        private string filePath = "C:";
+        private string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         /// <summary>
         /// Indica si el ítem seleccionado es un archivo.
@@ -251,6 +251,8 @@ namespace Project_MemoryKidz
                 filePath = directoryHistory.Pop();
                 textBoxPath.Text = filePath;
                 loadFilesAndDirectories(null);
+                changeNameButton.Enabled = false;
+                deleteButton.Enabled = false;
             }
             else
             {
@@ -283,6 +285,7 @@ namespace Project_MemoryKidz
                     }
                     loadFilesAndDirectories(null);
                     deleteButton.Enabled = false;
+                    changeNameButton.Enabled = false;
                 }
 
             }

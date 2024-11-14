@@ -323,7 +323,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACk
-        bAEAAk1TRnQBSQFMAgEBCQEAAVgBAAFYAQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
+        bAEAAk1TRnQBSQFMAgEBCQEAAXABAAFwAQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
         AwABkAMAAQEBAAEgBgABsAEB/wD/AP8A/wD/AP8A/wD/AP8ANgAD9AH/A+4B/wPeAf8B7gHPAbEB/wHu
         AcABmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGa
         Af8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHe
@@ -1918,7 +1918,7 @@
     <value>11</value>
   </data>
   <data name="changeNameButton.Text" xml:space="preserve">
-    <value>Cambiar Nombre</value>
+    <value>Cambiar Nombre </value>
   </data>
   <data name="&gt;&gt;changeNameButton.Name" xml:space="preserve">
     <value>changeNameButton</value>
@@ -1985,6 +1985,9 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>

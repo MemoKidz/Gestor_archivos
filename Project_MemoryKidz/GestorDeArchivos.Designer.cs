@@ -34,14 +34,14 @@
             this.labelRoute = new System.Windows.Forms.Label();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.createFileButton = new System.Windows.Forms.Button();
+            this.createFolderButton = new System.Windows.Forms.Button();
             this.filterButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.changeNameButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.createFolderButton = new System.Windows.Forms.Button();
-            this.createFileButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,20 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // createFileButton
+            // 
+            resources.ApplyResources(this.createFileButton, "createFileButton");
+            this.createFileButton.Name = "createFileButton";
+            this.createFileButton.UseVisualStyleBackColor = true;
+            this.createFileButton.Click += new System.EventHandler(this.createFileButton_Click);
+            // 
+            // createFolderButton
+            // 
+            resources.ApplyResources(this.createFolderButton, "createFolderButton");
+            this.createFolderButton.Name = "createFolderButton";
+            this.createFolderButton.UseVisualStyleBackColor = true;
+            this.createFolderButton.Click += new System.EventHandler(this.createFolderButton_Click);
             // 
             // filterButton
             // 
@@ -133,24 +147,11 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // createFolderButton
-            // 
-            resources.ApplyResources(this.createFolderButton, "createFolderButton");
-            this.createFolderButton.Name = "createFolderButton";
-            this.createFolderButton.UseVisualStyleBackColor = true;
-            this.createFolderButton.Click += new System.EventHandler(this.createFolderButton_Click);
-            // 
-            // createFileButton
-            // 
-            resources.ApplyResources(this.createFileButton, "createFileButton");
-            this.createFileButton.Name = "createFileButton";
-            this.createFileButton.UseVisualStyleBackColor = true;
-            this.createFileButton.Click += new System.EventHandler(this.createFileButton_Click);
-            // 
             // GestorDeArchivos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.background;
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestorDeArchivos";
