@@ -75,10 +75,5 @@ namespace Project_MemoryKidz
                 MessageBox.Show("Error al cargar el archivo JSON:" + ex.Message);
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

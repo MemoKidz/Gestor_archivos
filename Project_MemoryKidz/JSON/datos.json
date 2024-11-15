@@ -1,34 +1,103 @@
-﻿[
-  {
-    "Avatar": "Tigre",
-    "tiempoNivel1": 120,
-    "tiempoNivel2": 150,
-    "tiempoNivel3": 180,
-    "fallos": 3,
-    "fechaHora": "2024-10-23T14:30:00"
-  },
-  {
-    "Avatar": "Leon",
-    "tiempoNivel1": 100,
-    "tiempoNivel2": 130,
-    "tiempoNivel3": 160,
-    "fallos": 2,
-    "fechaHora": "2024-10-23T15:00:00"
-  },
-  {
-    "Avatar": "Jirafa",
-    "tiempoNivel1": 110,
-    "tiempoNivel2": 140,
-    "tiempoNivel3": 170,
-    "fallos": 4,
-    "fechaHora": "2024-10-23T15:30:00"
-  },
-  {
-    "Avatar": "Tigre",
-    "tiempoNivel1": 130,
-    "tiempoNivel2": 160,
-    "tiempoNivel3": 190,
-    "fallos": 1,
-    "fechaHora": "2024-10-23T16:00:00"
+﻿{
+  "groups": {
+    "1": {
+      "avatars": {
+        "zebra": {
+          "levels": [
+            {
+              "level": 1,
+              "time": "00:05:10",
+              "attempts": 3
+            },
+            {
+              "level": 2,
+              "time": "00:04:30",
+              "attempts": 2
+            },
+            {
+              "level": 3,
+              "time": "00:06:00",
+              "attempts": 5
+            }
+          ]
+        },
+        "leon": {
+          "levels": [
+            {
+              "level": 1,
+              "time": "00:01:05",
+              "attempts": 1
+            },
+            {
+              "level": 2,
+              "time": "00:01:42",
+              "attempts": 1
+            },
+            {
+              "level": 3,
+              "time": "00:04:45",
+              "attempts": 1
+            }
+          ]
+        },
+        "tiger": {
+          "levels": [
+            {
+              "level": 1,
+              "time": "00:03:15",
+              "attempts": 2
+            },
+            {
+              "level": 2,
+              "time": "00:02:50",
+              "attempts": 3
+            },
+            {
+              "level": 3,
+              "time": "00:04:20",
+              "attempts": 4
+            }
+          ]
+        },
+        "elephant": {
+          "levels": [
+            {
+              "level": 1,
+              "time": "00:06:10",
+              "attempts": 4
+            },
+            {
+              "level": 2,
+              "time": "00:05:50",
+              "attempts": 3
+            },
+            {
+              "level": 3,
+              "time": "00:07:00",
+              "attempts": 6
+            }
+          ]
+        },
+        "giraffe": {
+          "levels": [
+            {
+              "level": 1,
+              "time": "00:02:25",
+              "attempts": 2
+            },
+            {
+              "level": 2,
+              "time": "00:03:10",
+              "attempts": 2
+            },
+            {
+              "level": 3,
+              "time": "00:04:00",
+              "attempts": 3
+            }
+          ]
+        }
+      }
+    }
   }
-]
+}

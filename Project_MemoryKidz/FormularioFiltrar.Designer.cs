@@ -44,6 +44,7 @@
             // 
             // fileTypeGroupBox
             // 
+            this.fileTypeGroupBox.BackColor = System.Drawing.Color.Snow;
             this.fileTypeGroupBox.Controls.Add(this.jpegRadioButton);
             this.fileTypeGroupBox.Controls.Add(this.pdfRadioButton);
             this.fileTypeGroupBox.Controls.Add(this.mp4RadioButton);
@@ -53,9 +54,10 @@
             this.fileTypeGroupBox.Controls.Add(this.docRadioButton);
             this.fileTypeGroupBox.Controls.Add(this.exeRadioButton);
             this.fileTypeGroupBox.Controls.Add(this.jsonRadioButton);
+            this.fileTypeGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileTypeGroupBox.Location = new System.Drawing.Point(26, 12);
             this.fileTypeGroupBox.Name = "fileTypeGroupBox";
-            this.fileTypeGroupBox.Size = new System.Drawing.Size(179, 244);
+            this.fileTypeGroupBox.Size = new System.Drawing.Size(153, 253);
             this.fileTypeGroupBox.TabIndex = 0;
             this.fileTypeGroupBox.TabStop = false;
             this.fileTypeGroupBox.Text = "Tipo de archivo";
@@ -66,7 +68,7 @@
             this.jpegRadioButton.Location = new System.Drawing.Point(7, 144);
             this.jpegRadioButton.Name = "jpegRadioButton";
             this.jpegRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.jpegRadioButton.Size = new System.Drawing.Size(88, 17);
+            this.jpegRadioButton.Size = new System.Drawing.Size(104, 23);
             this.jpegRadioButton.TabIndex = 10;
             this.jpegRadioButton.TabStop = true;
             this.jpegRadioButton.Text = ".jpeg";
@@ -78,7 +80,7 @@
             this.pdfRadioButton.Location = new System.Drawing.Point(6, 52);
             this.pdfRadioButton.Name = "pdfRadioButton";
             this.pdfRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.pdfRadioButton.Size = new System.Drawing.Size(83, 17);
+            this.pdfRadioButton.Size = new System.Drawing.Size(96, 23);
             this.pdfRadioButton.TabIndex = 9;
             this.pdfRadioButton.TabStop = true;
             this.pdfRadioButton.Text = ".pdf";
@@ -90,7 +92,7 @@
             this.mp4RadioButton.Location = new System.Drawing.Point(7, 213);
             this.mp4RadioButton.Name = "mp4RadioButton";
             this.mp4RadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.mp4RadioButton.Size = new System.Drawing.Size(88, 17);
+            this.mp4RadioButton.Size = new System.Drawing.Size(104, 23);
             this.mp4RadioButton.TabIndex = 7;
             this.mp4RadioButton.TabStop = true;
             this.mp4RadioButton.Text = ".mp4";
@@ -102,7 +104,7 @@
             this.mp3RadioButton.Location = new System.Drawing.Point(7, 190);
             this.mp3RadioButton.Name = "mp3RadioButton";
             this.mp3RadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.mp3RadioButton.Size = new System.Drawing.Size(88, 17);
+            this.mp3RadioButton.Size = new System.Drawing.Size(104, 23);
             this.mp3RadioButton.TabIndex = 6;
             this.mp3RadioButton.TabStop = true;
             this.mp3RadioButton.Text = ".mp3";
@@ -114,7 +116,7 @@
             this.pngRadioButton.Location = new System.Drawing.Point(7, 167);
             this.pngRadioButton.Name = "pngRadioButton";
             this.pngRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.pngRadioButton.Size = new System.Drawing.Size(86, 17);
+            this.pngRadioButton.Size = new System.Drawing.Size(101, 23);
             this.pngRadioButton.TabIndex = 5;
             this.pngRadioButton.TabStop = true;
             this.pngRadioButton.Text = ".png";
@@ -126,7 +128,7 @@
             this.jpgRadioButton.Location = new System.Drawing.Point(7, 121);
             this.jpgRadioButton.Name = "jpgRadioButton";
             this.jpgRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.jpgRadioButton.Size = new System.Drawing.Size(82, 17);
+            this.jpgRadioButton.Size = new System.Drawing.Size(95, 23);
             this.jpgRadioButton.TabIndex = 4;
             this.jpgRadioButton.TabStop = true;
             this.jpgRadioButton.Text = ".jpg";
@@ -138,7 +140,7 @@
             this.docRadioButton.Location = new System.Drawing.Point(6, 75);
             this.docRadioButton.Name = "docRadioButton";
             this.docRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.docRadioButton.Size = new System.Drawing.Size(86, 17);
+            this.docRadioButton.Size = new System.Drawing.Size(100, 23);
             this.docRadioButton.TabIndex = 3;
             this.docRadioButton.TabStop = true;
             this.docRadioButton.Text = ".doc";
@@ -150,7 +152,7 @@
             this.exeRadioButton.Location = new System.Drawing.Point(7, 98);
             this.exeRadioButton.Name = "exeRadioButton";
             this.exeRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.exeRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.exeRadioButton.Size = new System.Drawing.Size(98, 23);
             this.exeRadioButton.TabIndex = 2;
             this.exeRadioButton.TabStop = true;
             this.exeRadioButton.Text = ".exe";
@@ -162,7 +164,7 @@
             this.jsonRadioButton.Location = new System.Drawing.Point(6, 29);
             this.jsonRadioButton.Name = "jsonRadioButton";
             this.jsonRadioButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.jsonRadioButton.Size = new System.Drawing.Size(87, 17);
+            this.jsonRadioButton.Size = new System.Drawing.Size(104, 23);
             this.jsonRadioButton.TabIndex = 0;
             this.jsonRadioButton.TabStop = true;
             this.jsonRadioButton.Text = ".json";
@@ -170,26 +172,29 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(61, 262);
+            this.applyButton.BackColor = System.Drawing.Color.Coral;
+            this.applyButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applyButton.ForeColor = System.Drawing.Color.Black;
+            this.applyButton.Location = new System.Drawing.Point(53, 271);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(95, 42);
             this.applyButton.TabIndex = 1;
             this.applyButton.Text = "Aplicar";
-            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.UseVisualStyleBackColor = false;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // FormularioFiltrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 316);
+            this.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(206, 330);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.fileTypeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(382, 79);
             this.Name = "FormularioFiltrar";
             this.Text = "Filtrar";
-            this.Load += new System.EventHandler(this.FormularioFiltrar_Load);
             this.fileTypeGroupBox.ResumeLayout(false);
             this.fileTypeGroupBox.PerformLayout();
             this.ResumeLayout(false);

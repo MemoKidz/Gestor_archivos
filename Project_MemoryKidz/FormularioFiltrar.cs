@@ -82,10 +82,5 @@ namespace Project_MemoryKidz
             this.Close();
 
         }
-
-        private void FormularioFiltrar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

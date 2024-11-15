@@ -64,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Snow;
             this.groupBox1.Controls.Add(this.createFileButton);
             this.groupBox1.Controls.Add(this.createFolderButton);
             this.groupBox1.Controls.Add(this.filterButton);
@@ -109,6 +110,7 @@
             // listViewFiles
             // 
             resources.ApplyResources(this.listViewFiles, "listViewFiles");
+            this.listViewFiles.BackColor = System.Drawing.Color.Snow;
             this.listViewFiles.HideSelection = false;
             this.listViewFiles.LargeImageList = this.imageList1;
             this.listViewFiles.MultiSelect = false;
