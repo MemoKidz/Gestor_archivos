@@ -1,103 +1,104 @@
 ﻿{
-  "groups": {
-    "1": {
-      "avatars": {
-        "zebra": {
+  "groups": [
+    {
+      "group": 1,
+      "avatars": [
+        {
+          "avatar": 1,
           "levels": [
             {
               "level": 1,
-              "time": "00:05:10",
-              "attempts": 3
+              "time": "0:19",
+              "attempts": 6
             },
             {
               "level": 2,
-              "time": "00:04:30",
-              "attempts": 2
+              "time": "0:26",
+              "attempts": 8
             },
             {
               "level": 3,
-              "time": "00:06:00",
+              "time": "0:35",
+              "attempts": 12
+            }
+          ]
+        },
+        {
+          "avatar": 2,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:16",
               "attempts": 5
             }
           ]
         },
-        "leon": {
+        {
+          "avatar": 3,
           "levels": [
             {
               "level": 1,
-              "time": "00:01:05",
-              "attempts": 1
-            },
-            {
-              "level": 2,
-              "time": "00:01:42",
-              "attempts": 1
-            },
-            {
-              "level": 3,
-              "time": "00:04:45",
-              "attempts": 1
-            }
-          ]
-        },
-        "tiger": {
-          "levels": [
-            {
-              "level": 1,
-              "time": "00:03:15",
-              "attempts": 2
-            },
-            {
-              "level": 2,
-              "time": "00:02:50",
-              "attempts": 3
-            },
-            {
-              "level": 3,
-              "time": "00:04:20",
+              "time": "0:13",
               "attempts": 4
             }
           ]
         },
-        "elephant": {
+        {
+          "avatar": 4,
           "levels": [
             {
               "level": 1,
-              "time": "00:06:10",
+              "time": "0:13",
               "attempts": 4
-            },
+            }
+          ]
+        },
+        {
+          "avatar": 5,
+          "levels": [
             {
-              "level": 2,
-              "time": "00:05:50",
-              "attempts": 3
-            },
+              "level": 1,
+              "time": "0:16",
+              "attempts": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "avatars": [
+        {
+          "avatar": 1,
+          "levels": [
             {
-              "level": 3,
-              "time": "00:07:00",
+              "level": 1,
+              "time": "0:12",
+              "attempts": 4
+            }
+          ]
+        },
+        {
+          "avatar": 4,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:18",
               "attempts": 6
             }
           ]
         },
-        "giraffe": {
+        {
+          "avatar": 2,
           "levels": [
             {
               "level": 1,
-              "time": "00:02:25",
-              "attempts": 2
-            },
-            {
-              "level": 2,
-              "time": "00:03:10",
-              "attempts": 2
-            },
-            {
-              "level": 3,
-              "time": "00:04:00",
-              "attempts": 3
+              "time": "0:17",
+              "attempts": 5
             }
           ]
         }
-      }
+      ]
     }
-  }
+  ]
 }
