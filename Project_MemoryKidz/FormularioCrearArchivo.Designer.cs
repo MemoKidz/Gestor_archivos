@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioCrearArchivo));
             this.createFileGroupBox = new System.Windows.Forms.GroupBox();
             this.createFileButton = new System.Windows.Forms.Button();
             this.createFileDataGridView = new System.Windows.Forms.DataGridView();
@@ -113,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.background;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(850, 253);
             this.Controls.Add(this.createFileGroupBox);
             this.Name = "FormularioCrearArchivo";

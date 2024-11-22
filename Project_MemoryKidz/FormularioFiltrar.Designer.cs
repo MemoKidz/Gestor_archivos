@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioFiltrar));
             this.fileTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.jpegRadioButton = new System.Windows.Forms.RadioButton();
             this.pdfRadioButton = new System.Windows.Forms.RadioButton();
@@ -187,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.background;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(206, 330);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.fileTypeGroupBox);

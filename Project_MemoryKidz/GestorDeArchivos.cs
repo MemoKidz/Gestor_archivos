@@ -446,5 +446,10 @@ namespace Project_MemoryKidz
             }
             loadFilesAndDirectories(null);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
