@@ -34,6 +34,8 @@
             this.labelRoute = new System.Windows.Forms.Label();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pasteButton = new System.Windows.Forms.Button();
+            this.copyButton = new System.Windows.Forms.Button();
             this.createFileButton = new System.Windows.Forms.Button();
             this.createFolderButton = new System.Windows.Forms.Button();
             this.filterButton = new System.Windows.Forms.Button();
@@ -65,6 +67,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Snow;
+            this.groupBox1.Controls.Add(this.pasteButton);
+            this.groupBox1.Controls.Add(this.copyButton);
             this.groupBox1.Controls.Add(this.createFileButton);
             this.groupBox1.Controls.Add(this.createFolderButton);
             this.groupBox1.Controls.Add(this.filterButton);
@@ -78,6 +82,20 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // pasteButton
+            // 
+            resources.ApplyResources(this.pasteButton, "pasteButton");
+            this.pasteButton.Name = "pasteButton";
+            this.pasteButton.UseVisualStyleBackColor = true;
+            this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
+            // 
+            // copyButton
+            // 
+            resources.ApplyResources(this.copyButton, "copyButton");
+            this.copyButton.Name = "copyButton";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // createFileButton
             // 
@@ -178,6 +196,8 @@
         private System.Windows.Forms.Button filterButton;
         private System.Windows.Forms.Button createFolderButton;
         private System.Windows.Forms.Button createFileButton;
+        private System.Windows.Forms.Button pasteButton;
+        private System.Windows.Forms.Button copyButton;
     }
 }
 

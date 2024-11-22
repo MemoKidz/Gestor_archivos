@@ -33,6 +33,9 @@ namespace Project_MemoryKidz
         /// </summary>
         private Stack<string> directoryHistory = new Stack<string>();
 
+        /// este string es nuevo
+        private string copiedFilePath = "";
+
 
         /// <summary>
         /// Inicializa una nueva instancia del formulario GestorDeArchivos.
@@ -52,8 +55,7 @@ namespace Project_MemoryKidz
         private void GestorDeArchivos_Load(object sender, EventArgs e)
         {
             textBoxPath.Text = filePath;
-            deleteButton.Enabled = false;
-            changeNameButton.Enabled = false;
+
             loadFilesAndDirectories(null);
         }
 
@@ -64,14 +66,28 @@ namespace Project_MemoryKidz
         /// <param name="tipoArchivo">El tipo de archivo para filtrar, o null para cargar todos los archivos.</param>
         private void loadFilesAndDirectories(string tipoArchivo)
         {
+
+            deleteButton.Enabled = false;
+            changeNameButton.Enabled = false;
+            copyButton.Enabled = false;
+
+
+            if (copiedFilePath == "")
+            {
+                pasteButton.Enabled = false;
+            }
+            else
+            {
+                pasteButton.Enabled = true;
+            }
+
+
             try
             {
                 listViewFiles.Items.Clear();
                 DirectoryInfo fileList = new DirectoryInfo(filePath);
-
                 FileInfo[] files = fileList.GetFiles();
                 DirectoryInfo[] directories = fileList.GetDirectories();
-
 
                 foreach (var directory in directories)
                 {
@@ -179,6 +195,7 @@ namespace Project_MemoryKidz
             selectedItemName = e.IsSelected ? e.Item.Text : "";
             deleteButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
             changeNameButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
+            copyButton.Enabled = !string.IsNullOrEmpty(selectedItemName);
 
 
             FileAttributes fileAttr = File.GetAttributes(filePath + "/" + selectedItemName);
@@ -213,8 +230,6 @@ namespace Project_MemoryKidz
                     filePath = newPath;
                     textBoxPath.Text = filePath;
                     loadFilesAndDirectories(null);
-                    deleteButton.Enabled = false;
-                    changeNameButton.Enabled = false;
                 }
                 else
                 {
@@ -251,8 +266,6 @@ namespace Project_MemoryKidz
                 filePath = directoryHistory.Pop();
                 textBoxPath.Text = filePath;
                 loadFilesAndDirectories(null);
-                changeNameButton.Enabled = false;
-                deleteButton.Enabled = false;
             }
             else
             {
@@ -284,8 +297,6 @@ namespace Project_MemoryKidz
                         File.Delete(newPath);
                     }
                     loadFilesAndDirectories(null);
-                    deleteButton.Enabled = false;
-                    changeNameButton.Enabled = false;
                 }
 
             }
@@ -327,13 +338,13 @@ namespace Project_MemoryKidz
         private void changeNameButton_Click(object sender, EventArgs e)
         {
 
-            
+
             string nuevoNombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nuevo nombre:", "Renombrar", selectedItemName);
 
-            
+
             if (string.IsNullOrEmpty(nuevoNombre))
             {
-                return; 
+                return;
             }
 
             try
@@ -359,8 +370,6 @@ namespace Project_MemoryKidz
                 }
 
                 // Recargar los archivos y directorios
-                changeNameButton.Enabled = false;
-                deleteButton.Enabled = false;
                 loadFilesAndDirectories(null);
 
             }
@@ -417,6 +426,25 @@ namespace Project_MemoryKidz
                     loadFilesAndDirectories(null);
                 }
             }
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            copiedFilePath = Path.Combine(filePath, selectedItemName);
+            pasteButton.Enabled = true;
+        }
+
+
+        private void pasteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.Copy(copiedFilePath, Path.Combine(filePath, Path.GetFileName(copiedFilePath)));
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            loadFilesAndDirectories(null);
         }
     }
 }
