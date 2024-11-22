@@ -36,18 +36,19 @@
             this.level2TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level3TimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.failsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createFileGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createFileDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // createFileGroupBox
             // 
+            this.createFileGroupBox.BackColor = System.Drawing.Color.Snow;
             this.createFileGroupBox.Controls.Add(this.createFileButton);
             this.createFileGroupBox.Controls.Add(this.createFileDataGridView);
+            this.createFileGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createFileGroupBox.Location = new System.Drawing.Point(13, 12);
             this.createFileGroupBox.Name = "createFileGroupBox";
-            this.createFileGroupBox.Size = new System.Drawing.Size(825, 425);
+            this.createFileGroupBox.Size = new System.Drawing.Size(825, 226);
             this.createFileGroupBox.TabIndex = 1;
             this.createFileGroupBox.TabStop = false;
             this.createFileGroupBox.Text = "Crear nuevo fichero";
@@ -64,17 +65,17 @@
             // 
             // createFileDataGridView
             // 
+            this.createFileDataGridView.BackgroundColor = System.Drawing.Color.Snow;
             this.createFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.createFileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.avatarColumn,
             this.level1TimeColumn,
             this.level2TimeColumn,
             this.level3TimeColumn,
-            this.failsColumn,
-            this.dateColumn});
+            this.failsColumn});
             this.createFileDataGridView.Location = new System.Drawing.Point(6, 30);
             this.createFileDataGridView.Name = "createFileDataGridView";
-            this.createFileDataGridView.Size = new System.Drawing.Size(744, 150);
+            this.createFileDataGridView.Size = new System.Drawing.Size(813, 150);
             this.createFileDataGridView.TabIndex = 0;
             this.createFileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.createFileDataGridView_CellContentClick);
             // 
@@ -82,37 +83,38 @@
             // 
             this.avatarColumn.HeaderText = "Avatar";
             this.avatarColumn.Name = "avatarColumn";
+            this.avatarColumn.Width = 120;
             // 
             // level1TimeColumn
             // 
             this.level1TimeColumn.HeaderText = "Tiempo Primer Nivel";
             this.level1TimeColumn.Name = "level1TimeColumn";
+            this.level1TimeColumn.Width = 180;
             // 
             // level2TimeColumn
             // 
             this.level2TimeColumn.HeaderText = "Tiempo Segundo Nivel";
             this.level2TimeColumn.Name = "level2TimeColumn";
+            this.level2TimeColumn.Width = 180;
             // 
             // level3TimeColumn
             // 
             this.level3TimeColumn.HeaderText = "Tiempo Tercer Nivel";
             this.level3TimeColumn.Name = "level3TimeColumn";
+            this.level3TimeColumn.Width = 180;
             // 
             // failsColumn
             // 
             this.failsColumn.HeaderText = "Fallos";
             this.failsColumn.Name = "failsColumn";
-            // 
-            // dateColumn
-            // 
-            this.dateColumn.HeaderText = "Fecha y Hora";
-            this.dateColumn.Name = "dateColumn";
+            this.failsColumn.Width = 110;
             // 
             // FormularioCrearArchivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 449);
+            this.BackgroundImage = global::Project_MemoryKidz.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(850, 253);
             this.Controls.Add(this.createFileGroupBox);
             this.Name = "FormularioCrearArchivo";
             this.Text = "FormularioCrearArchivo";
@@ -131,6 +133,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn level2TimeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn level3TimeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn failsColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
     }
 }

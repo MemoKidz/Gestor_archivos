@@ -33,16 +33,6 @@ namespace Project_MemoryKidz
                 {
                     if (row.IsNewRow) continue;
 
-                    DateTime? dateTimeColumnValue = null;
-
-                    dateTimeColumnValue = (DateTime?)row.Cells["dateColumn"].Value;
-
-                    if (dateTimeColumnValue == null)
-                    {
-                        row.Cells["dateColumn"].Value = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"); ;
-                    }
-
-
 
                     Partida partida = new Partida
                     {
@@ -51,7 +41,7 @@ namespace Project_MemoryKidz
                         TiempoNivel2 = Convert.ToInt32(row.Cells["level2TimeColumn"].Value),
                         TiempoNivel3 = Convert.ToInt32(row.Cells["level3TimeColumn"].Value),
                         Fallos = Convert.ToInt32(row.Cells["failsColumn"].Value),
-                        FechaHora = Convert.ToDateTime(row.Cells["dateColumn"].Value),
+                        FechaHora = DateTime.Now,
                     };
 
                     partidas.Add(partida);

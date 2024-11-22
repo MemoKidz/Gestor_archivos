@@ -1,34 +1,104 @@
-﻿[
-  {
-    "Avatar": "Tigre",
-    "tiempoNivel1": 120,
-    "tiempoNivel2": 150,
-    "tiempoNivel3": 180,
-    "fallos": 3,
-    "fechaHora": "2024-10-23T14:30:00"
-  },
-  {
-    "Avatar": "Leon",
-    "tiempoNivel1": 100,
-    "tiempoNivel2": 130,
-    "tiempoNivel3": 160,
-    "fallos": 2,
-    "fechaHora": "2024-10-23T15:00:00"
-  },
-  {
-    "Avatar": "Jirafa",
-    "tiempoNivel1": 110,
-    "tiempoNivel2": 140,
-    "tiempoNivel3": 170,
-    "fallos": 4,
-    "fechaHora": "2024-10-23T15:30:00"
-  },
-  {
-    "Avatar": "Tigre",
-    "tiempoNivel1": 130,
-    "tiempoNivel2": 160,
-    "tiempoNivel3": 190,
-    "fallos": 1,
-    "fechaHora": "2024-10-23T16:00:00"
-  }
-]
+﻿{
+  "groups": [
+    {
+      "group": 1,
+      "avatars": [
+        {
+          "avatar": 1,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:19",
+              "attempts": 6
+            },
+            {
+              "level": 2,
+              "time": "0:26",
+              "attempts": 8
+            },
+            {
+              "level": 3,
+              "time": "0:35",
+              "attempts": 12
+            }
+          ]
+        },
+        {
+          "avatar": 2,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:16",
+              "attempts": 5
+            }
+          ]
+        },
+        {
+          "avatar": 3,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:13",
+              "attempts": 4
+            }
+          ]
+        },
+        {
+          "avatar": 4,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:13",
+              "attempts": 4
+            }
+          ]
+        },
+        {
+          "avatar": 5,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:16",
+              "attempts": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "avatars": [
+        {
+          "avatar": 1,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:12",
+              "attempts": 4
+            }
+          ]
+        },
+        {
+          "avatar": 4,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:18",
+              "attempts": 6
+            }
+          ]
+        },
+        {
+          "avatar": 2,
+          "levels": [
+            {
+              "level": 1,
+              "time": "0:17",
+              "attempts": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

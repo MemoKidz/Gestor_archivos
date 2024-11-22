@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="searchButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Arial, 12pt, style=Bold</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="searchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="searchButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>840, 28</value>
+    <value>836, 27</value>
   </data>
   <data name="searchButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 40</value>
@@ -148,22 +148,22 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;searchButton.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="labelRoute.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="labelRoute.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelRoute.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelRoute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 40</value>
+    <value>55, 37</value>
   </data>
   <data name="labelRoute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 17</value>
+    <value>51, 19</value>
   </data>
   <data name="labelRoute.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -181,13 +181,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;labelRoute.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="textBoxPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 40</value>
+    <value>101, 34</value>
   </data>
   <data name="textBoxPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>729, 20</value>
+    <value>729, 26</value>
   </data>
   <data name="textBoxPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -202,16 +202,70 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBoxPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="pasteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pasteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 80</value>
+  </data>
+  <data name="pasteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 40</value>
+  </data>
+  <data name="pasteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="pasteButton.Text" xml:space="preserve">
+    <value>Pegar</value>
+  </data>
+  <data name="&gt;&gt;pasteButton.Name" xml:space="preserve">
+    <value>pasteButton</value>
+  </data>
+  <data name="&gt;&gt;pasteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pasteButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pasteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="copyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="copyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 80</value>
+  </data>
+  <data name="copyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 40</value>
+  </data>
+  <data name="copyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="copyButton.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="&gt;&gt;copyButton.Name" xml:space="preserve">
+    <value>copyButton</value>
+  </data>
+  <data name="&gt;&gt;copyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copyButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;copyButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="createFileButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="createFileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>651, 79</value>
+    <value>535, 79</value>
   </data>
   <data name="createFileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 40</value>
+    <value>125, 40</value>
   </data>
   <data name="createFileButton.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -229,16 +283,16 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;createFileButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="createFolderButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="createFolderButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 80</value>
+    <value>398, 80</value>
   </data>
   <data name="createFolderButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 39</value>
+    <value>128, 39</value>
   </data>
   <data name="createFolderButton.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -256,13 +310,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;createFolderButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="filterButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="filterButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 79</value>
+    <value>289, 79</value>
   </data>
   <data name="filterButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 40</value>
@@ -283,13 +337,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;filterButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="deleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 79</value>
+    <value>182, 79</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 40</value>
@@ -310,7 +364,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="listViewFiles.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
     <value>SnapToGrid</value>
@@ -323,7 +377,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACk
-        bAEAAk1TRnQBSQFMAgEBCQEAAVgBAAFYAQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
+        bAEAAk1TRnQBSQFMAgEBCQEAAZABAAGQAQABMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
         AwABkAMAAQEBAAEgBgABsAEB/wD/AP8A/wD/AP8A/wD/AP8ANgAD9AH/A+4B/wPeAf8B7gHPAbEB/wHu
         AcABmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGa
         Af8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHeAbEBmgH/Ad4BsQGaAf8B3gGxAZoB/wHe
@@ -1903,22 +1957,22 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;listViewFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="changeNameButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="changeNameButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 79</value>
+    <value>14, 79</value>
   </data>
   <data name="changeNameButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 40</value>
+    <value>159, 40</value>
   </data>
   <data name="changeNameButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="changeNameButton.Text" xml:space="preserve">
-    <value>Cambiar Nombre</value>
+    <value>Cambiar Nombre </value>
   </data>
   <data name="&gt;&gt;changeNameButton.Name" xml:space="preserve">
     <value>changeNameButton</value>
@@ -1930,7 +1984,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;changeNameButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="backButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -1939,7 +1993,7 @@
     <value>NoControl</value>
   </data>
   <data name="backButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 28</value>
+    <value>15, 27</value>
   </data>
   <data name="backButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 40</value>
@@ -1957,7 +2011,10 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;backButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -1985,6 +2042,9 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>

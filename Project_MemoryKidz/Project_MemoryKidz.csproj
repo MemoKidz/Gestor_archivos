@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Avatar.cs" />
     <Compile Include="FormularioCrearArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,15 +69,18 @@
     <Compile Include="GestorDeArchivos.Designer.cs">
       <DependentUpon>GestorDeArchivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Group.cs" />
     <Compile Include="LectorJson.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LectorJson.Designer.cs">
       <DependentUpon>LectorJson.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level.cs" />
     <Compile Include="Partida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Root.cs" />
     <EmbeddedResource Include="FormularioCrearArchivo.resx">
       <DependentUpon>FormularioCrearArchivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\back-button.png" />
+    <Content Include="resources\background.jpeg" />
     <Content Include="resources\doc.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
