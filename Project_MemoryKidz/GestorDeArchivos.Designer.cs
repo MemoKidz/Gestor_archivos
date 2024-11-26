@@ -66,6 +66,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.Color.Snow;
             this.groupBox1.Controls.Add(this.pasteButton);
             this.groupBox1.Controls.Add(this.copyButton);
@@ -79,7 +80,6 @@
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.labelRoute);
             this.groupBox1.Controls.Add(this.searchButton);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -172,7 +172,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestorDeArchivos";
             this.Load += new System.EventHandler(this.GestorDeArchivos_Load);
             this.groupBox1.ResumeLayout(false);

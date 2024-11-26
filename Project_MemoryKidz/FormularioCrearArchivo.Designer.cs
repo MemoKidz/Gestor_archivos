@@ -45,20 +45,24 @@
             // 
             // createFileGroupBox
             // 
+            this.createFileGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.createFileGroupBox.BackColor = System.Drawing.Color.Snow;
             this.createFileGroupBox.Controls.Add(this.createFileButton);
             this.createFileGroupBox.Controls.Add(this.createFileDataGridView);
             this.createFileGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createFileGroupBox.Location = new System.Drawing.Point(13, 12);
             this.createFileGroupBox.Name = "createFileGroupBox";
-            this.createFileGroupBox.Size = new System.Drawing.Size(1044, 254);
+            this.createFileGroupBox.Size = new System.Drawing.Size(1044, 308);
             this.createFileGroupBox.TabIndex = 1;
             this.createFileGroupBox.TabStop = false;
             this.createFileGroupBox.Text = "Crear nuevo fichero";
             // 
             // createFileButton
             // 
-            this.createFileButton.Location = new System.Drawing.Point(6, 207);
+            this.createFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createFileButton.Location = new System.Drawing.Point(6, 271);
             this.createFileButton.Name = "createFileButton";
             this.createFileButton.Size = new System.Drawing.Size(86, 31);
             this.createFileButton.TabIndex = 1;
@@ -68,6 +72,11 @@
             // 
             // createFileDataGridView
             // 
+            this.createFileDataGridView.AllowUserToAddRows = false;
+            this.createFileDataGridView.AllowUserToDeleteRows = false;
+            this.createFileDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.createFileDataGridView.BackgroundColor = System.Drawing.Color.Snow;
             this.createFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.createFileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -80,7 +89,7 @@
             this.level3AttemptsColumn});
             this.createFileDataGridView.Location = new System.Drawing.Point(6, 30);
             this.createFileDataGridView.Name = "createFileDataGridView";
-            this.createFileDataGridView.Size = new System.Drawing.Size(1006, 171);
+            this.createFileDataGridView.Size = new System.Drawing.Size(1006, 225);
             this.createFileDataGridView.TabIndex = 0;
             // 
             // avatarColumn
@@ -127,10 +136,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1087, 278);
+            this.ClientSize = new System.Drawing.Size(1087, 332);
             this.Controls.Add(this.createFileGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioCrearArchivo";
-            this.Text = "FormularioCrearArchivo";
+            this.Text = "Crear archivo";
             this.Load += new System.EventHandler(this.FormularioCrearArchivo_Load);
             this.createFileGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createFileDataGridView)).EndInit();
