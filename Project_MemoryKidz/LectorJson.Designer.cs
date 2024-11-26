@@ -111,7 +111,6 @@
             this.dataGridView1.Location = new System.Drawing.Point(17, 42);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(730, 213);
@@ -128,21 +127,18 @@
             // 
             this.ColumnTimeFirst.HeaderText = "Tiempo primer nivel";
             this.ColumnTimeFirst.Name = "ColumnTimeFirst";
-            this.ColumnTimeFirst.ReadOnly = true;
             this.ColumnTimeFirst.Width = 160;
             // 
             // ColumnTimeSecond
             // 
             this.ColumnTimeSecond.HeaderText = "Tiempo segundo nivel";
             this.ColumnTimeSecond.Name = "ColumnTimeSecond";
-            this.ColumnTimeSecond.ReadOnly = true;
             this.ColumnTimeSecond.Width = 160;
             // 
             // ColumnTimeThird
             // 
             this.ColumnTimeThird.HeaderText = "Tiempo tercer nivel";
             this.ColumnTimeThird.Name = "ColumnTimeThird";
-            this.ColumnTimeThird.ReadOnly = true;
             this.ColumnTimeThird.Width = 160;
             // 
             // ColumnTries
@@ -172,12 +168,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ButtonPreviousGroup;
+        private System.Windows.Forms.Button buttonNextGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAvatar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTimeFirst;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTimeSecond;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTimeThird;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTries;
-        private System.Windows.Forms.Button ButtonPreviousGroup;
-        private System.Windows.Forms.Button buttonNextGroup;
     }
 }
