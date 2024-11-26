@@ -20,6 +20,7 @@ namespace Project_MemoryKidz
         public FormularioCrearArchivo()
         {
             InitializeComponent();
+
         }
 
 
@@ -27,34 +28,60 @@ namespace Project_MemoryKidz
         {
             try
             {
-                List<Partida> partidas = new List<Partida>();
+                Group currentGroup = new Group
+                {
+                    group = 1,
+                    avatars = new List<Avatar>()
+                };
 
                 foreach (DataGridViewRow row in createFileDataGridView.Rows)
                 {
                     if (row.IsNewRow) continue;
 
+                    int avatar = Convert.ToInt32(row.Cells["avatarColumn"].Value);
 
-                    Partida partida = new Partida
+                    Avatar avatarObj = currentGroup.avatars.FirstOrDefault(a => a.avatar == avatar);
+
+                    if (avatarObj == null)
                     {
-                        Avatar = row.Cells["avatarColumn"].Value?.ToString(),
-                        TiempoNivel1 = Convert.ToInt32(row.Cells["level1TimeColumn"].Value),
-                        TiempoNivel2 = Convert.ToInt32(row.Cells["level2TimeColumn"].Value),
-                        TiempoNivel3 = Convert.ToInt32(row.Cells["level3TimeColumn"].Value),
-                        Fallos = Convert.ToInt32(row.Cells["failsColumn"].Value),
-                        FechaHora = DateTime.Now,
-                    };
+                        avatarObj = new Avatar
+                        {
+                            avatar = avatar,
+                            levels = new List<Level>()
+                        };
+                        currentGroup.avatars.Add(avatarObj);
+                    }
 
-                    partidas.Add(partida);
+                    avatarObj.levels.Add(new Level
+                    {
+                        level = 1,
+                        time = row.Cells["level1TimeColumn"].Value.ToString(),
+                        attempts = Convert.ToInt32(row.Cells["level1AttemptsColumn"].Value)
+                    });
 
+                    avatarObj.levels.Add(new Level
+                    {
+                        level = 2,
+                        time = row.Cells["level2TimeColumn"].Value.ToString(),
+                        attempts = Convert.ToInt32(row.Cells["level2AttemptsColumn"].Value)
+                    });
+
+                    avatarObj.levels.Add(new Level
+                    {
+                        level = 3,
+                        time = row.Cells["level3TimeColumn"].Value.ToString(),
+                        attempts = Convert.ToInt32(row.Cells["level3AttemptsColumn"].Value)
+                    });
                 }
 
-                string jsonContent = JsonConvert.SerializeObject(partidas, Formatting.Indented);
+                Root root = new Root
+                {
+                    groups = new List<Group> { currentGroup }
+                };
 
-                // string filePath = Path.Combine(folderPath, "partidas.json"); // Aquí puedes especificar la ruta deseada
+                string jsonContent = JsonConvert.SerializeObject(root, Formatting.Indented);
 
-                String newPath = Path.Combine(filePath, "partidas.json");
-
-
+                string newPath = Path.Combine(filePath, "partidas.json");
                 File.WriteAllText(newPath, jsonContent);
 
                 MessageBox.Show("Datos guardados exitosamente en el archivo JSON.");
@@ -62,17 +89,22 @@ namespace Project_MemoryKidz
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar los datos en el archivo JSON: " + ex.Message);
-
             }
 
             this.DialogResult = DialogResult.OK;
-            this.Close(); 
-
+            this.Close();
         }
 
-        private void createFileDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+
+        private void FormularioCrearArchivo_Load(object sender, EventArgs e)
+        {
+            for (int i = 1; i < 6; i++)
+            {
+                createFileDataGridView.Rows.Add(i, "0:00", 0, "0:00", 0, "0:00", 0);
+            }
+
+            createFileDataGridView.AllowUserToAddRows = false;
         }
     }
 }
