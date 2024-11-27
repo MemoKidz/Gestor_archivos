@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -14,16 +9,25 @@ namespace Project_MemoryKidz
 {
     public partial class FormularioCrearArchivo : Form
     {
-
+        /// <summary>
+        /// Ruta del archivo donde se guardará el archivo JSON.
+        /// </summary>
         public string filePath { get; set; }
 
+        /// <summary>
+        /// Inicializa una nueva instancia del formulario <see cref="FormularioCrearArchivo"/>.
+        /// </summary>
         public FormularioCrearArchivo()
         {
             InitializeComponent();
 
         }
 
-
+        /// <summary>
+        /// Controlador del evento para crear y guardar un archivo JSON con los datos de los avatares y sus niveles.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void createFileButton_Click(object sender, EventArgs e)
         {
             try
@@ -40,7 +44,7 @@ namespace Project_MemoryKidz
 
                     int avatar = Convert.ToInt32(row.Cells["avatarColumn"].Value);
 
-
+                    // Buscar si el avatar ya existe en la lista de avatares del grupo actual
                     Avatar avatarObj = currentGroup.avatars.FirstOrDefault(a => a.avatar == avatar);
 
                     if (avatarObj == null)
@@ -87,9 +91,9 @@ namespace Project_MemoryKidz
 
                 MessageBox.Show("Datos guardados exitosamente en el archivo JSON.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al guardar los datos en el archivo JSON: " + ex.Message);
+                MessageBox.Show("Error al guardar los datos en el archivo JSON");
             }
 
             this.DialogResult = DialogResult.OK;
@@ -97,7 +101,12 @@ namespace Project_MemoryKidz
         }
 
 
-
+        /// <summary>
+        /// Controlador del evento que se ejecuta al cargar el formulario.
+        /// Inicializa el DataGridView con datos predeterminados.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void FormularioCrearArchivo_Load(object sender, EventArgs e)
         {
             for (int i = 1; i < 6; i++)

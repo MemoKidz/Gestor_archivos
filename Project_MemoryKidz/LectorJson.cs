@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,8 +32,6 @@ namespace Project_MemoryKidz
         {
             try
             {
-
-                // Lee todo el contenido del archivo JSON.
                 string jsonContent = File.ReadAllText(jsonFilePath);
 
                 // Deserializa el contenido JSON a un objeto de tipo Root.
@@ -47,16 +44,12 @@ namespace Project_MemoryKidz
                     return;
                 }
 
-                // Limpiar cualquier dato previo en el DataGridView.
                 dataGridView1.Rows.Clear();
 
-                // Mapeo de avatares
                 string[] avatars = { "Mono", "Tiburón", "Tortuga", "Serpiente", "Pájaro" };
 
-                // Obtener el grupo actual
                 Group group = root.groups[currentGroupIndex];
 
-                // Iterar sobre los avatares del grupo
                 foreach (var avatar in group.avatars)
                 {
                     int totalAttempts = 0;
@@ -67,7 +60,6 @@ namespace Project_MemoryKidz
                     {
                         totalAttempts += level.attempts;
 
-                        // Asignar los tiempos a los niveles correspondientes
                         if (level.level == 1)
                         {
                             timeLevel1 = level.time;
@@ -82,7 +74,6 @@ namespace Project_MemoryKidz
                         }
                     }
 
-                    // Agregar los datos del avatar al DataGridView
                     dataGridView1.Rows.Add(
                         avatars[avatar.avatar - 1],   // Nombre del avatar
                         timeLevel1,                   // Tiempo del primer nivel
@@ -93,13 +84,19 @@ namespace Project_MemoryKidz
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Si ocurre un error al leer o deserializar el archivo JSON, muestra un mensaje de error.
-                MessageBox.Show("Error al cargar el archivo JSON: " + ex.Message);
+                MessageBox.Show("Error al cargar el archivo JSON, puede deberse a que este abriendo un JSON con un formato incompatible");
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
             }
         }
 
+        /// <summary>
+        /// Controlador del evento para cambiar al grupo anterior.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void ButtonPreviousGroup_Click(object sender, EventArgs e)
         {
             if (currentGroupIndex > 0)
@@ -113,6 +110,11 @@ namespace Project_MemoryKidz
             }
         }
 
+        /// <summary>
+        /// Controlador del evento para cambiar al siguiente grupo.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void buttonNextGroup_Click(object sender, EventArgs e)
         {
             if (currentGroupIndex < root.groups.Count - 1)
@@ -125,6 +127,12 @@ namespace Project_MemoryKidz
                 MessageBox.Show("Ya estás en el último grupo.");
             }
         }
+
+        /// <summary>
+        /// Controlador del evento para guardar los cambios realizados en el DataGridView al archivo JSON.
+        /// </summary>
+        /// <param name="sender">El origen del evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void safeButton_Click(object sender, EventArgs e)
         {
             try
@@ -136,31 +144,24 @@ namespace Project_MemoryKidz
                     return;
                 }
 
-                // Obtén el grupo actual
                 Group currentGroup = root.groups[currentGroupIndex];
 
                 // Mapear los datos del DataGridView al grupo actual
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    // Verifica que la fila no esté vacía
                     if (dataGridView1.Rows[i].Cells[0].Value == null) continue;
 
                     // Mapear las columnas del DataGridView a las propiedades
-                    string avatarName = dataGridView1.Rows[i].Cells[0].Value.ToString();
                     string timeLevel1 = dataGridView1.Rows[i].Cells[1].Value?.ToString() ?? "0:00";
                     string timeLevel2 = dataGridView1.Rows[i].Cells[2].Value?.ToString() ?? "0:00";
                     string timeLevel3 = dataGridView1.Rows[i].Cells[3].Value?.ToString() ?? "0:00";
 
-                    // Encontrar el avatar correspondiente en el grupo actual
                     Avatar avatar = currentGroup.avatars[i];
 
                     // Asegurar que cada nivel existe y luego actualizar su tiempo
-
                     UpdateOrAddLevel(avatar, 1, timeLevel1);
                     UpdateOrAddLevel(avatar, 2, timeLevel2);
                     UpdateOrAddLevel(avatar, 3, timeLevel3);
-
-                    // Actualizar los niveles
 
                     currentGroup.avatars[i] = avatar;
                 }
@@ -168,18 +169,22 @@ namespace Project_MemoryKidz
                 // Serializar el objeto Root de vuelta a JSON
                 string updatedJson = JsonConvert.SerializeObject(root, Formatting.Indented);
 
-                // Guardar el JSON actualizado en el archivo
                 File.WriteAllText(jsonFilePath, updatedJson);
 
                 MessageBox.Show("Archivo JSON guardado exitosamente.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
+                MessageBox.Show("Error al guardar los cambios");
             }
         }
 
-        // Método para actualizar un nivel existente o añadirlo si no está presente
+        /// <summary>
+        /// Método para actualizar un nivel existente o añadirlo si no está presente.
+        /// </summary>
+        /// <param name="avatar">El avatar al que pertenece el nivel.</param>
+        /// <param name="levelNumber">El número del nivel a actualizar o agregar.</param>
+        /// <param name="newTime">El nuevo tiempo para el nivel.</param>
         private void UpdateOrAddLevel(Avatar avatar, int levelNumber, string newTime)
         {
             // Buscar el nivel correspondiente
@@ -197,7 +202,7 @@ namespace Project_MemoryKidz
                 {
                     level = levelNumber,
                     time = newTime,
-                    attempts = 0 // Opcional: Puedes asignar un valor predeterminado
+                    attempts = 0 
                 });
             }
         }

@@ -82,7 +82,6 @@
             this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pasteButton
             // 

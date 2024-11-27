@@ -33,7 +33,9 @@ namespace Project_MemoryKidz
         /// </summary>
         private Stack<string> directoryHistory = new Stack<string>();
 
-        /// este string es nuevo
+        /// <summary>
+        /// String con el filepath del archivo copiado, en caso de que haya alguno
+        /// </summary>
         private string copiedFilePath = "";
 
 
@@ -112,9 +114,9 @@ namespace Project_MemoryKidz
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al cargar los archivos y directorios:" + ex.Message);
+                MessageBox.Show("Error al cargar los archivos y directorios");
             }
         }
 
@@ -236,7 +238,11 @@ namespace Project_MemoryKidz
                     if (Path.GetExtension(newPath).ToLower() == ".json")
                     {
                         LectorJson lector = new LectorJson(newPath);
-                        lector.ShowDialog();
+                        if(lector.DialogResult != DialogResult.Cancel)
+                        {
+                            lector.ShowDialog();
+                        }
+                        
                     }
                     else
                     {
@@ -244,9 +250,9 @@ namespace Project_MemoryKidz
                         {
                             System.Diagnostics.Process.Start(newPath);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+                            MessageBox.Show("No se pudo abrir el archivo");
                         }
                     }
                 }
@@ -290,7 +296,14 @@ namespace Project_MemoryKidz
                     string newPath = Path.Combine(filePath, selectedItemName);
                     if (Directory.Exists(newPath))
                     {
-                        Directory.Delete(newPath);
+                        try
+                        {
+                            Directory.Delete(newPath);
+                        } catch (Exception)
+                        {
+                            MessageBox.Show("No se puede borrar el directorio ya que no esta vacio");
+                        }
+                        
                     }
                     else
                     {
@@ -373,9 +386,9 @@ namespace Project_MemoryKidz
                 loadFilesAndDirectories(null);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al renombrar: " + ex.Message);
+                MessageBox.Show("Error al renombrar");
             }
 
         }
@@ -391,7 +404,6 @@ namespace Project_MemoryKidz
         {
 
             string newFolderName = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre de la nueva carpeta:", "Crear carpeta");
-            //filePath es la variable del path actual
 
             if (string.IsNullOrEmpty(newFolderName))
             {
@@ -405,16 +417,20 @@ namespace Project_MemoryKidz
                 if (!Directory.Exists(newCreationPath))
                 {
                     Directory.CreateDirectory(newCreationPath);
-                    MessageBox.Show("Nueva carpeta creada!");
                     loadFilesAndDirectories(null);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al crear nueva carpeta: " + ex.Message);
+                MessageBox.Show("Error al crear la nueva carpeta.");
             }
         }
 
+        /// <summary>
+        /// Evento que llama al formulario de crear archivo para crear uno nuevo y asignarle el filepath segun el directorio donde se encuentre
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de crear archivo).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void createFileButton_Click(object sender, EventArgs e)
         {
             using (FormularioCrearArchivo nuevoArchivoForm = new FormularioCrearArchivo())
@@ -428,28 +444,68 @@ namespace Project_MemoryKidz
             }
         }
 
+        /// <summary>
+        /// Asigna el filepath del archivo que se quiere copiar a la variable global y
+        /// habilita el botón de pegar para usarlo más adelante
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de copiar).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void copyButton_Click(object sender, EventArgs e)
         {
             copiedFilePath = Path.Combine(filePath, selectedItemName);
             pasteButton.Enabled = true;
         }
 
-
+        /// <summary>
+        /// Evento que utiliza la variable donde esta almacenado el archivo a copiar y lo copia al directorio donde se encuentre
+        /// </summary>
+        /// <param name="sender">El objeto que originó el evento (el botón de pegar).</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void pasteButton_Click(object sender, EventArgs e)
         {
             try
             {
-                File.Copy(copiedFilePath, Path.Combine(filePath, Path.GetFileName(copiedFilePath)));
+                if (Directory.Exists(copiedFilePath))
+                {
+                    copyDirectory(copiedFilePath, filePath, true);
+                }
+                else
+                {
+                    File.Copy(copiedFilePath, Path.Combine(filePath, Path.GetFileName(copiedFilePath)));
+                }
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+            catch (Exception) {
+                MessageBox.Show("No se ha podido pegar el archivo ya que ha surgido un problema");
             }
             loadFilesAndDirectories(null);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Evento que copia los directorios y subdirectios de un directorio copiado
+        /// </summary>
+        /// <param name="sourceDir">El filePath del directorio que se quiere copiar</param>
+        /// <param name="destinationDir">el filePath de donde se pegara la nueva carpeta</param>
+        /// <param name="recursive">un boolean para que en caso de que haya subdirectorios estos se copien tambien</param>
+        private void copyDirectory(string sourceDir, string destinationDir, bool recursive)
         {
+            var dir = new DirectoryInfo(sourceDir);
 
+            Directory.CreateDirectory(destinationDir);
+
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                string targetFilePath = Path.Combine(destinationDir, file.Name);
+                file.CopyTo(targetFilePath, true); 
+            }
+
+            if (recursive)
+            {
+                foreach (DirectoryInfo subDir in dir.GetDirectories())
+                {
+                    string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
+                    copyDirectory(subDir.FullName, newDestinationDir, true);
+                }
+            }
         }
     }
 }
