@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LectorJson));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.safeButton = new System.Windows.Forms.Button();
             this.ButtonPreviousGroup = new System.Windows.Forms.Button();
             this.buttonNextGroup = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.ColumnTimeSecond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTimeThird = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTries = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.safeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(767, 347);
             this.panel1.TabIndex = 1;
+            // 
+            // safeButton
+            // 
+            this.safeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.safeButton.Location = new System.Drawing.Point(667, 261);
+            this.safeButton.Name = "safeButton";
+            this.safeButton.Size = new System.Drawing.Size(80, 28);
+            this.safeButton.TabIndex = 3;
+            this.safeButton.Text = "Guardar";
+            this.safeButton.UseVisualStyleBackColor = true;
+            this.safeButton.Click += new System.EventHandler(this.safeButton_Click);
             // 
             // ButtonPreviousGroup
             // 
@@ -148,16 +159,6 @@
             this.ColumnTries.HeaderText = "Intentos";
             this.ColumnTries.Name = "ColumnTries";
             this.ColumnTries.ReadOnly = true;
-            // 
-            // safeButton
-            // 
-            this.safeButton.Location = new System.Drawing.Point(667, 261);
-            this.safeButton.Name = "safeButton";
-            this.safeButton.Size = new System.Drawing.Size(80, 28);
-            this.safeButton.TabIndex = 3;
-            this.safeButton.Text = "Guardar";
-            this.safeButton.UseVisualStyleBackColor = true;
-            this.safeButton.Click += new System.EventHandler(this.safeButton_Click);
             // 
             // LectorJson
             // 

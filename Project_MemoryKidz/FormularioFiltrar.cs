@@ -37,7 +37,6 @@ namespace Project_MemoryKidz
         /// <param name="e">Argumentos del evento.</param>
         private void applyButton_Click(object sender, EventArgs e)
         {
-            // Se evalúa cuál es el tipo de archivo seleccionado
             if (jsonRadioButton.Checked)
             {
                 tipoArchivoSeleccionado = ".json";
