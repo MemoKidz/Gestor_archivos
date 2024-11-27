@@ -11,31 +11,41 @@ namespace Project_MemoryKidz
         /// <summary>
         /// Obtiene o establece el nombre del avatar del jugador.
         /// </summary>
-        public string Avatar { get; set; }
+        public int Avatar { get; set; }
 
         /// <summary>
         /// Obtiene o establece el tiempo que el jugador tardó en completar el primer nivel.
         /// </summary>
-        public int TiempoNivel1 { get; set; }
+        public string TiempoNivel1 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int IntentosNivel1 { get; set; }
 
         /// <summary>
         /// Obtiene o establece el tiempo que el jugador tardó en completar el segundo nivel.
         /// </summary>
-        public int TiempoNivel2 { get; set; }
+        public string TiempoNivel2 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int IntentosNivel2 { get; set; }
 
         /// <summary>
         /// Obtiene o establece el tiempo que el jugador tardó en completar el tercer nivel.
         /// </summary>
-        public int TiempoNivel3 { get; set; }
+        public string TiempoNivel3 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int IntentosNivel3 { get; set; }
 
         /// <summary>
         /// Obtiene o establece el número de intentos cometidos por el jugador durante la partida.
         /// </summary>
         public int Fallos { get; set; }
-
-        /// <summary>
-        /// Obtiene o establece la fecha y hora en la que se jugó la partida.
-        /// </summary>
-        public DateTime FechaHora { get; set; }
     }
 }

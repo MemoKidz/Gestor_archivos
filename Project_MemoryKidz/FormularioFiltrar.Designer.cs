@@ -45,6 +45,9 @@
             // 
             // fileTypeGroupBox
             // 
+            this.fileTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fileTypeGroupBox.BackColor = System.Drawing.Color.Snow;
             this.fileTypeGroupBox.Controls.Add(this.jpegRadioButton);
             this.fileTypeGroupBox.Controls.Add(this.pdfRadioButton);
@@ -173,6 +176,8 @@
             // 
             // applyButton
             // 
+            this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.applyButton.BackColor = System.Drawing.Color.Coral;
             this.applyButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applyButton.ForeColor = System.Drawing.Color.Black;
@@ -193,8 +198,10 @@
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.fileTypeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(382, 79);
             this.Name = "FormularioFiltrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtrar";
             this.fileTypeGroupBox.ResumeLayout(false);
             this.fileTypeGroupBox.PerformLayout();
