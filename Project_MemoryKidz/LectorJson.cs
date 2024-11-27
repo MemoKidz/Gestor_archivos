@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Project_MemoryKidz
@@ -32,6 +33,7 @@ namespace Project_MemoryKidz
         {
             try
             {
+
                 // Lee todo el contenido del archivo JSON.
                 string jsonContent = File.ReadAllText(jsonFilePath);
 
@@ -121,6 +123,82 @@ namespace Project_MemoryKidz
             else
             {
                 MessageBox.Show("Ya estás en el último grupo.");
+            }
+        }
+        private void safeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verifica que el grupo actual existe
+                if (root == null || root.groups == null || root.groups.Count == 0)
+                {
+                    MessageBox.Show("No hay datos cargados para guardar.");
+                    return;
+                }
+
+                // Obtén el grupo actual
+                Group currentGroup = root.groups[currentGroupIndex];
+
+                // Mapear los datos del DataGridView al grupo actual
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    // Verifica que la fila no esté vacía
+                    if (dataGridView1.Rows[i].Cells[0].Value == null) continue;
+
+                    // Mapear las columnas del DataGridView a las propiedades
+                    string avatarName = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    string timeLevel1 = dataGridView1.Rows[i].Cells[1].Value?.ToString() ?? "0:00";
+                    string timeLevel2 = dataGridView1.Rows[i].Cells[2].Value?.ToString() ?? "0:00";
+                    string timeLevel3 = dataGridView1.Rows[i].Cells[3].Value?.ToString() ?? "0:00";
+
+                    // Encontrar el avatar correspondiente en el grupo actual
+                    Avatar avatar = currentGroup.avatars[i];
+
+                    // Asegurar que cada nivel existe y luego actualizar su tiempo
+
+                    UpdateOrAddLevel(avatar, 1, timeLevel1);
+                    UpdateOrAddLevel(avatar, 2, timeLevel2);
+                    UpdateOrAddLevel(avatar, 3, timeLevel3);
+
+                    // Actualizar los niveles
+
+                    currentGroup.avatars[i] = avatar;
+                }
+
+                // Serializar el objeto Root de vuelta a JSON
+                string updatedJson = JsonConvert.SerializeObject(root, Formatting.Indented);
+
+                // Guardar el JSON actualizado en el archivo
+                File.WriteAllText(jsonFilePath, updatedJson);
+
+                MessageBox.Show("Archivo JSON guardado exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
+            }
+        }
+
+        // Método para actualizar un nivel existente o añadirlo si no está presente
+        private void UpdateOrAddLevel(Avatar avatar, int levelNumber, string newTime)
+        {
+            // Buscar el nivel correspondiente
+            var level = avatar.levels.FirstOrDefault(l => l.level == levelNumber);
+
+            if (level != null)
+            {
+                // Actualizar el tiempo del nivel existente
+                level.time = newTime;
+            }
+            else
+            {
+                // Si el nivel no existe, lo añadimos al avatar
+                avatar.levels.Add(new Level
+                {
+                    level = levelNumber,
+                    time = newTime,
+                    attempts = 0 // Opcional: Puedes asignar un valor predeterminado
+                });
             }
         }
     }

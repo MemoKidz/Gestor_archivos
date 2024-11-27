@@ -39,6 +39,7 @@
             this.ColumnTimeSecond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTimeThird = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTries = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.safeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Snow;
+            this.panel1.Controls.Add(this.safeButton);
             this.panel1.Controls.Add(this.ButtonPreviousGroup);
             this.panel1.Controls.Add(this.buttonNextGroup);
             this.panel1.Controls.Add(this.label1);
@@ -147,6 +149,16 @@
             this.ColumnTries.Name = "ColumnTries";
             this.ColumnTries.ReadOnly = true;
             // 
+            // safeButton
+            // 
+            this.safeButton.Location = new System.Drawing.Point(667, 261);
+            this.safeButton.Name = "safeButton";
+            this.safeButton.Size = new System.Drawing.Size(80, 28);
+            this.safeButton.TabIndex = 3;
+            this.safeButton.Text = "Guardar";
+            this.safeButton.UseVisualStyleBackColor = true;
+            this.safeButton.Click += new System.EventHandler(this.safeButton_Click);
+            // 
             // LectorJson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTimeSecond;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTimeThird;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTries;
+        private System.Windows.Forms.Button safeButton;
     }
 }

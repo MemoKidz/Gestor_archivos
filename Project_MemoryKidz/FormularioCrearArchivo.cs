@@ -40,6 +40,7 @@ namespace Project_MemoryKidz
 
                     int avatar = Convert.ToInt32(row.Cells["avatarColumn"].Value);
 
+
                     Avatar avatarObj = currentGroup.avatars.FirstOrDefault(a => a.avatar == avatar);
 
                     if (avatarObj == null)
